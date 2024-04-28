@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PSR&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Record some important knowledge">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PSR&#39;s Blog">
+<meta property="og:url" content="http://psrpsr23.github.io/blog/page/3/index.html">
+<meta property="og:site_name" content="PSR&#39;s Blog">
+<meta property="og:description" content="Record some important knowledge">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="彭澍荣# 博客的作者">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="PSR's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">PSR&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Come on!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://psrpsr23.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-note/动手学深度学习/引言" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%BC%95%E8%A8%80/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.996Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a><em><strong>机器学习</strong></em></h2><p><strong>_机器学习_（machine learning，ML）是一类强大的可以从经验中学习的技术</strong></p>
+<ul>
+<li>通常采用观测数据或与环境交互的形式，机器学习算法会积累更多的经验，其性能也会逐步提高。</li>
+</ul>
+<p>eg:</p>
+<blockquote>
+<p>假如需要我们编写程序来响应一个“唤醒词”（比如“Alexa”“小爱同学”和“Hey Siri”)</p>
+<blockquote>
+<ul>
+<li>麦克风每秒钟将收集大约44000个样本，每个样本都是声波振幅的测量值。而该测量值与唤醒词难以直接关联。</li>
+<li>那又该如何编写程序，令其输入麦克风采集到的原始音频片段,输出是否${是,否}$（表示该片段是否包含唤醒词）的可靠预测呢<br>即使我们不知道如何编写计算机程序来识别“Alexa”这个词，大脑自己也能够识别它。<br>有了这一能力，我们就可以收集一个包含大量音频样本的数据集（dataset），并对包含和不包含唤醒词的样本进行标记。</li>
+</ul>
+</blockquote>
+<p>我们只需要定义一个灵活的程序算法，其输出由许多参数（parameter）决定，然后使用数据集来确定当下的“最佳参数集”，这些参数通过某种性能度量方式来达到完成任务的最佳性能。</p>
+<p><strong>参数</strong></p>
+<blockquote>
+<p> 参数可以被看作旋钮，旋钮的转动可以调整程序的行为。 任一调整参数后的程序被称为模型（model）。 通过操作参数而生成的所有不同程序（输入-输出映射）的集合称为“模型族”。 使用数据集来选择参数的元程序被称为学习算法（learning algorithm）。</p>
+</blockquote>
+<p>开始用机器学习算法解决问题之前，我们必须精确地定义问题，确定输入（input）和输出（output）的性质，并选择合适的模型族。 </p>
+<blockquote>
+<p>在本例中，模型接收一段音频作为输入，然后在是或否中生成一个选择作为输出。 如果一切顺利，经过一番训练，模型对于“片段是否包含唤醒词”的预测通常是正确的。</p>
+</blockquote>
+<p> 由于这里的唤醒词是任意选择的自然语言，因此我们可能需要一个足够丰富的模型族，使模型多元化。<br> &gt; 比如，模型族的另一个模型只在听到“Hey Siri”这个词时发出“是”。 理想情况下，同一个模型族应该适合于“Alexa”识别和“Hey Siri”识别，因为从直觉上看，它们似乎是相似的任务。</p>
+<p> 在机器学习中，_学习_（learning）是一个训练模型的过程。 通过这个过程，我们可以发现正确的参数集，从而使模型强制执行所需的行为。<br> ![[ml-loop.svg]]<br> &gt; 1. 从一个随机初始化参数的模型开始，这个模型基本没有“智能”；<br> &gt; 2. 获取一些数据样本（例如，音频片段以及对应的是或否标签）；<br> &gt; 3. 调整参数，使模型在这些样本中表现得更好；<br> &gt; 4. 重复第（2）步和第（3）步，直到模型在任务中的表现令人满意。<br> 总而言之，我们没有编写唤醒词识别器，而是编写了一个“学习”程序<br> &gt; 如果我们用一个巨大的带标签的数据集，它很可能可以“学习”识别唤醒词。 这种“通过用数据集来确定程序行为”的方法可以被看作用数据编程（programming with data）。<br> &gt; &gt;  比如，我们可以通过向机器学习系统，提供许多猫和狗的图片来设计一个“猫图检测器”。 检测器最终可以学会：如果输入是猫的图片就输出一个非常大的正数，如果输入是狗的图片就会输出一个非常小的负数。 如果检测器不确定输入的图片中是猫还是狗，它会输出接近于零的数</p>
+</blockquote>
+<h2 id="机器学习中的关键组件"><a href="#机器学习中的关键组件" class="headerlink" title="机器学习中的关键组件"></a>机器学习中的关键组件</h2><ol>
+<li>可以用来学习的数据（data）。</li>
+<li>如何转换数据的模型（model）。</li>
+<li>一个目标函数（objective function），用来量化模型的有效性。</li>
+<li>调整模型参数以优化目标函数的算法（algorithm）。</li>
+</ol>
+<h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ul>
+<li>每个数据集由一个<strong>样本</strong>组成，遵从独立同分布<ul>
+<li>有时也叫做数据点或者数据实例</li>
+<li>通常每个样本由一组特征的属性组成</li>
+<li>机器学习会根据这些属性进行预测</li>
+<li>例1：当处理图像数据时，每一张单独的照片即为一个样本，它的特征由每个像素数值的有序列表表示。 比如，200×200彩色照片由200×200×3&#x3D;120000个数值组成，其中的“3”对应于每个空间位置的红、绿、蓝通道的强度。 </li>
+<li>例2：对于一组医疗数据，给定一组标准的特征（如年龄、生命体征和诊断），此数据可以用来尝试预测患者是否会存活。</li>
+</ul>
+</li>
+<li>当样本的特征类别数量都是相同的时候，其特征向量是固定长度的，这个长度被称为数据的<strong>维数</strong><ul>
+<li>然而，并不是所有的数据都可以用“固定长度”的向量表示。</li>
+<li>与传统机器学习方法相比，深度学习的一个主要优势是可以处理不同长度的数据。</li>
+</ul>
+</li>
+<li>一般来说，拥有越多数据的时候，工作就越容易。</li>
+<li>仅仅拥有海量的数据是不够的，还需要正确的数据</li>
+</ul>
+<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><ul>
+<li>大多数机器学习会涉及到数据的转换</li>
+<li>深度学习与经典方法的区别主要在于：前者关注的功能强大的模型，这些模型由神经网络错综复杂的交织在一起，包含层层数据转换，因此被称为<strong>深度学习</strong>（deep learning）。</li>
+</ul>
+<h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><ul>
+<li>这里所说的“学习”，是指自主提高模型完成某些任务的效能</li>
+<li> 在机器学习中，我们需要定义模型的优劣程度的度量，这个度量在大多数情况是“可优化”的，这被称之为<strong>目标函数</strong>（objective function）</li>
+<li>我们通常定义一个目标函数，并希望优化它到最低点。 因为越低越好，所以这些函数有时被称为<strong>损失函数</strong>（loss function，或cost function）<ul>
+<li>当任务在试图预测数值时，最常见的损失函数是<strong>平方误差</strong>（squared error），即预测值与实际值之差的平方。 </li>
+<li>当试图解决分类问题时，最常见的目标函数是<strong>最小化错误率</strong>，即预测与实际情况不符的样本比例。</li>
+</ul>
+</li>
+<li>当一个模型在训练集上表现良好，但不能推广到测试集时，这个模型被称为<strong>过拟合</strong>（overfitting）的。</li>
+</ul>
+<h2 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h2><ul>
+<li>当我们获得了一些数据源及其表示、一个模型和一个合适的损失函数，接下来就需要一种算法，它能够搜索出最佳参数，以最小化损失函数。</li>
+<li>深度学习中，大多流行的优化算法通常基于一种基本方法<strong>梯度下降</strong>（gradient descent）</li>
+</ul>
+<h2 id="各种机器学习问题"><a href="#各种机器学习问题" class="headerlink" title="各种机器学习问题"></a>各种机器学习问题</h2><h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><ul>
+<li>在“给定输入特征”的情况下预测标签——在给定一组特定的可用数据的情况下，估计未知事物的概率。</li>
+<li>步骤<ul>
+<li>从已知大量数据样本中随机选取一个子集，为每个样本获取真实标签。有时，这些样本已有标签（例如，患者是否在下一年内康复？）；有时，这些样本可能需要被人工标记（例如，图像分类）。这些输入和相应的标签一起构成了训练数据集；</li>
+<li>选择有监督的学习算法，它将训练数据集作为输入，并输出一个“已完成学习的模型”；</li>
+<li>将之前没有见过的样本特征放到这个“已完成学习的模型”中，使用模型的输出作为相应标签的预测。![[Pasted image 20231220144653.png]]</li>
+</ul>
+</li>
+<li>回归<ul>
+<li>当标签取任意数值时，我们称之为<strong>回归</strong>问题</li>
+</ul>
+</li>
+<li>分类<ul>
+<li>这种“哪一个”的问题叫做<strong>分类</strong>（classification）问题</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%BC%95%E8%A8%80/" data-id="clvj9cw5e0001qkhta5l8dkqq" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/画图/色卡建立/色卡" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/%E8%89%B2%E5%8D%A1%E5%BB%BA%E7%AB%8B/%E8%89%B2%E5%8D%A1/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.989Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>使用<a target="_blank" rel="noopener" href="https://blog.csdn.net/woodcorpse/article/details/109882298#:~:text=%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9ARColorBrewer%E5%8C%85%201%20brewer.pal%20%28%209%2C%20%22Set1%22%29%20%23%E5%8F%AA%E6%9C%89%209,%29%29%20%28%205%29%204%20rainbow%20%28%2060%29%20%23%E5%BD%A9%E8%99%B9%E8%89%B2%E5%BE%88%E5%AE%B9%E6%98%93%E7%94%9F%E6%88%90%EF%BC%8C%E4%BD%86%E6%95%B0%E7%9B%AE%E4%B8%80%E5%A4%9A%E5%BE%88%E9%9A%BE%E5%8C%BA%E5%88%86%EF%BC%8C%E5%9B%A0%E4%B8%BA%E6%98%AF%E6%B8%90%E5%8F%98%E7%9A%84%E3%80%82">R语言：如何快速生成许多差异明显的颜色？-CSDN博客</a>中的色卡![[Pasted image 20231106145948.png]]</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cb_palette <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;#ed1299&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#09f9f5&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#246b93&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#cc8e12&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#d561dd&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#c93f00&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#ddd53e&quot;</span><span class="punctuation">,</span><span class="string">&quot;#4aef7b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#e86502&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#9ed84e&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#39ba30&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#6ad157&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#8249aa&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#99db27&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#e07233&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#ff523f&quot;</span><span class="punctuation">,</span><span class="string">&quot;#ce2523&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#f7aa5d&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#cebb10&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#03827f&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#931635&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#373bbf&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#a1ce4c&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#ef3bb6&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#d66551&quot;</span><span class="punctuation">,</span><span class="string">&quot;#1a918f&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#ff66fc&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#2927c4&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#7149af&quot;</span> <span class="punctuation">,</span><span class="string">&quot;#57e559&quot;</span> <span class="punctuation">,</span><span class="string">&quot;#8e3af4&quot;</span> <span class="punctuation">,</span><span class="string">&quot;#f9a270&quot;</span> <span class="punctuation">,</span><span class="string">&quot;#22547f&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#db5e92&quot;</span><span class="punctuation">,</span><span class="string">&quot;#edd05e&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#6f25e8&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#0dbc21&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#280f7a&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#6373ed&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#5b910f&quot;</span> <span class="punctuation">,</span><span class="string">&quot;#7b34c1&quot;</span> <span class="punctuation">,</span><span class="string">&quot;#0cf29a&quot;</span> <span class="punctuation">,</span><span class="string">&quot;#d80fc1&quot;</span><span class="punctuation">,</span><span class="string">&quot;#dd27ce&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#07a301&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#167275&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#391c82&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#2baeb5&quot;</span><span class="punctuation">,</span><span class="string">&quot;#925bea&quot;</span><span class="punctuation">,</span> <span class="string">&quot;#63ff4f&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p>![[Pasted image 20231106150227.png]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/%E8%89%B2%E5%8D%A1%E5%BB%BA%E7%AB%8B/%E8%89%B2%E5%8D%A1/" data-id="clvj9cw5u001bqkhtdwm76j5a" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/画图/seqlogo图/seqlogo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/seqlogo%E5%9B%BE/seqlogo/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.982Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>在R语言中导入<code>library(ggseqlogo)</code></p>
+</li>
+<li><p>载入数据包<code>data(ggseqlogo_sample)</code></p>
+</li>
+<li><p>使用命令<code>ggplot()+geom_logo(seqs_dna$MA0001.1)+theme_logo()</code></p>
+<ul>
+<li><code>ggplot()</code> 创造画布</li>
+<li><code>geom_logo()</code> 插入一个seqlogo图，其中参数为一个motif列表</li>
+<li><code>theme_logo()</code> 绘图主题</li>
+</ul>
+</li>
+<li><p>简化函数<code>ggseqlogo(seqs_dna$MA0001.1)</code></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/seqlogo%E5%9B%BE/seqlogo/" data-id="clvj9cw5u001aqkht47ke0x93" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/画图/ggplot分面画图/ggplot分面" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/ggplot%E5%88%86%E9%9D%A2%E7%94%BB%E5%9B%BE/ggplot%E5%88%86%E9%9D%A2/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.978Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ml-JoJo/p/16630087.html">玩转数据可视化之R语言ggplot2：（三）ggplot2实现将多张图放在一起，包括并排和插图绘制（快速入门） - JOJO数据科学 - 博客园 (cnblogs.com)</a></p>
+<p><code>layout &lt;- &quot; 112 3#2 344 &quot;</code></p>
+<p><code>p1 + p2 + p3 + p4 + plot_layout(design = layout)</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/ggplot%E5%88%86%E9%9D%A2%E7%94%BB%E5%9B%BE/ggplot%E5%88%86%E9%9D%A2/" data-id="clvj9cw5t0019qkht5dzj07rq" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/画图/3d堆积柱状图/3d堆积柱状图" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/3d%E5%A0%86%E7%A7%AF%E6%9F%B1%E7%8A%B6%E5%9B%BE/3d%E5%A0%86%E7%A7%AF%E6%9F%B1%E7%8A%B6%E5%9B%BE/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.972Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="首先要有各个组织的统计数量-Pasted-image-20231106142209-png"><a href="#首先要有各个组织的统计数量-Pasted-image-20231106142209-png" class="headerlink" title="首先要有各个组织的统计数量![[Pasted image 20231106142209.png]]"></a>首先要有各个组织的统计数量![[Pasted image 20231106142209.png]]</h2><ul>
+<li>第一列：不同组织的名称</li>
+<li>第二列：无用，只是为了方便画图</li>
+<li>第三列及之后：各个家族以及对应的个数</li>
+</ul>
+<h2 id="之后要导入到origin中-Pasted-image-20231106142537-png"><a href="#之后要导入到origin中-Pasted-image-20231106142537-png" class="headerlink" title="之后要导入到origin中![[Pasted image 20231106142537.png]]"></a>之后要导入到origin中![[Pasted image 20231106142537.png]]</h2><ul>
+<li><p>将A列设置为X轴</p>
+</li>
+<li><p>B列设置为Y轴</p>
+</li>
+<li><p>其余设置为Z轴</p>
+</li>
+<li><p>全选画图<br>![[Pasted image 20231106142730.png]]</p>
+</li>
+<li><p>使用[[色卡]]后<br>![[Pasted image 20231106150227.png]]</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/%E7%94%BB%E5%9B%BE/3d%E5%A0%86%E7%A7%AF%E6%9F%B1%E7%8A%B6%E5%9B%BE/3d%E5%A0%86%E7%A7%AF%E6%9F%B1%E7%8A%B6%E5%9B%BE/" data-id="clvj9cw5t0018qkhtfev466w2" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/深度学习/Numpy实现全连接神经网络实验指南" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Numpy%E5%AE%9E%E7%8E%B0%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.967Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Numpy实现全连接神经网络实验指南"><a href="#Numpy实现全连接神经网络实验指南" class="headerlink" title="Numpy实现全连接神经网络实验指南"></a>Numpy实现全连接神经网络实验指南</h1><h2 id="1-实验要求"><a href="#1-实验要求" class="headerlink" title="1.实验要求"></a>1.实验要求</h2><ul>
+<li>用python的numpy模块实现全连接神经网络</li>
+<li>一个输入层，一个隐藏层，一个输出层</li>
+<li>隐藏层激活函数为Relu函数，输出层为softmax函数</li>
+<li>损失函数为交叉熵</li>
+</ul>
+<h2 id="2-实验数据"><a href="#2-实验数据" class="headerlink" title="2.实验数据"></a>2.实验数据</h2><ul>
+<li>使用mnist数据集[[<a target="_blank" rel="noopener" href="http://doc.codingdict.com/tensorflow/tfdoc/tutorials/mnist_beginners.html]]">http://doc.codingdict.com/tensorflow/tfdoc/tutorials/mnist_beginners.html]]</a></li>
+</ul>
+<h2 id="3-相关公式"><a href="#3-相关公式" class="headerlink" title="3.相关公式"></a>3.相关公式</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Numpy%E5%AE%9E%E7%8E%B0%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97/" data-id="clvj9cw5l000gqkhtfna39dyu" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/学习使用/学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.963Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="学习内容"><a href="#学习内容" class="headerlink" title="学习内容"></a>学习内容</h1><h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/%E5%AD%A6%E4%B9%A0/" data-id="clvj9cw5l000fqkhtdha6e3ov" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/R/自建函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/R/%E8%87%AA%E5%BB%BA%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.959Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="choosegetcol"><a href="#choosegetcol" class="headerlink" title="choosegetcol()"></a>choosegetcol()</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">choosegetcol <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>path_read<span class="punctuation">,</span>col<span class="operator">=</span>V<span class="punctuation">,</span><span class="built_in">min</span><span class="operator">=</span><span class="number">0.99</span><span class="punctuation">,</span><span class="built_in">max</span><span class="operator">=</span><span class="number">1</span><span class="punctuation">,</span>path_write<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">#---------------根据列获取特定情况----------------#</span></span><br><span class="line">    <span class="comment">#path是文件路径</span></span><br><span class="line">    <span class="comment">#col是列名称</span></span><br><span class="line">    <span class="comment">#min，max是对应列要筛选的范围</span></span><br><span class="line">    file <span class="operator">&lt;-</span>  read.csv<span class="punctuation">(</span>path_read<span class="punctuation">,</span> header <span class="operator">=</span><span class="literal">TRUE</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&#x27;,&#x27;</span><span class="punctuation">)</span></span><br><span class="line">    file <span class="operator">&lt;-</span> subset<span class="punctuation">(</span>file<span class="punctuation">,</span>file<span class="punctuation">[</span><span class="punctuation">,</span>col<span class="punctuation">]</span> <span class="operator">&gt;</span> <span class="built_in">as.numeric</span><span class="punctuation">(</span><span class="built_in">min</span><span class="punctuation">)</span> <span class="operator">&amp;</span> file<span class="punctuation">[</span><span class="punctuation">,</span>col<span class="punctuation">]</span> <span class="operator">&lt;</span> <span class="built_in">as.numeric</span><span class="punctuation">(</span><span class="built_in">max</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">    write.csv<span class="punctuation">(</span>file<span class="punctuation">,</span>path_write<span class="punctuation">,</span>row.names<span class="operator">=</span><span class="literal">FALSE</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第一行：读取文件为数据框[[R语言学习#read.csv()]]（现在改用read_csv）[[R语言学习#read_csv()]]</li>
+<li>第二行：依据特定条件挑选数据框特定行[[R语言学习#subset()]]</li>
+<li>第三行：保存文件到path_write[[R语言学习#write.csv()]]（现在改用write_csv)[[R语言学习#write_csv()]]</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/R/%E8%87%AA%E5%BB%BA%E5%87%BD%E6%95%B0/" data-id="clvj9cw5i0007qkhtbi840nut" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/R/R语言学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/R/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.958Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="list-files"><a href="#list-files" class="headerlink" title="list.files()"></a>list.files()</h3><ul>
+<li>列出所有的文件<ul>
+<li>pattern:匹配特定部分</li>
+<li>full.names:列出完整路径</li>
+<li>recursive:递归查找</li>
+</ul>
+</li>
+</ul>
+<h2 id="gsub"><a href="#gsub" class="headerlink" title="gsub()"></a>gsub()</h2><ul>
+<li>替换特定字符串<ul>
+<li>把<code>3</code>中<code>1</code>的部分换成<code>2</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="read-csv"><a href="#read-csv" class="headerlink" title="read.csv()"></a>read.csv()</h2><ul>
+<li>从csv中读取数据<ul>
+<li>sep:按照什么分割数据（默认为，）</li>
+<li>header:是否存在标题行（默认为存在）</li>
+<li>stringAsFactors:是否将字符串转为因子类型（默认为转）</li>
+</ul>
+</li>
+</ul>
+<h2 id="read-csv-1"><a href="#read-csv-1" class="headerlink" title="read_csv()"></a>read_csv()</h2><ul>
+<li>从csv中读取，直接读取成tibble格式</li>
+</ul>
+<h2 id="subset"><a href="#subset" class="headerlink" title="subset()"></a>subset()</h2><ul>
+<li>从数据框中挑选特定行<ul>
+<li>第二个参数需要满足一定条件</li>
+</ul>
+</li>
+</ul>
+<h2 id="write-csv"><a href="#write-csv" class="headerlink" title="write.csv()"></a>write.csv()</h2><ul>
+<li>保存为csv格式文件<ul>
+<li>sep:按照什么分割</li>
+<li>row.names:是否保存行名</li>
+<li>col.names:是否保存列名</li>
+</ul>
+</li>
+</ul>
+<h2 id="write-csv-1"><a href="#write-csv-1" class="headerlink" title="write_csv()"></a>write_csv()</h2><ul>
+<li>保存文件为csv格式文件</li>
+</ul>
+<h2 id="unique"><a href="#unique" class="headerlink" title="unique()"></a>unique()</h2><ul>
+<li>按照行（数据框）或者元素（向量）去重</li>
+</ul>
+<h2 id="gather-spread"><a href="#gather-spread" class="headerlink" title="gather()&#x2F;spread()"></a>gather()&#x2F;spread()</h2><p><code>gather</code>函数将宽数据转换为长数据，<code>spread</code>函数将长数据转换为宽数据。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/R/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" data-id="clvj9jzbf0000cwhtaflp2wm0" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/learn_daily/R/R for data science" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/learn_daily/R/R%20for%20data%20science/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.957Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/R/R%20for%20data%20science/" data-id="clvj9cw5h0005qkht33vk1r9o" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><a class="page-number" href="/blog/page/6/">6</a><a class="extend next" rel="next" href="/blog/page/4/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/04/">四月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/04/28/%E5%BA%8F%E5%88%97%E6%A8%A1%E6%8B%9F%E8%AE%BA%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD%E7%A7%91%E7%A0%94/%E5%BA%8F%E5%88%97%E6%A8%A1%E6%8B%9F%E8%AE%BA%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD%E7%A7%91%E7%A0%94/ZeroBind/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E7%8E%89%E7%B1%B3/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E7%8E%89%E7%B1%B3/%E5%88%86%E5%B8%83%E5%9B%BE/%E5%90%84motif%E5%88%86%E5%B8%83%E5%9B%BE/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 彭澍荣# 博客的作者<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

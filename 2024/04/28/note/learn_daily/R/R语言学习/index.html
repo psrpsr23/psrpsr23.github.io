@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | PSR&#39;s Blog</title>
+  <title>PSR&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="list.files() 列出所有的文件 pattern:匹配特定部分 full.names:列出完整路径 recursive:递归查找    gsub() 替换特定字符串 把3中1的部分换成2    read.csv() 从csv中读取数据 sep:按照什么分割数据（默认为，） header:是否存在标题行（默认为存在） stringAsFactors:是否将字符串转为因子类型（默认为转）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://psrpsr23.github.io/blog/2024/04/28/hello-world/index.html">
+<meta property="og:title" content="PSR&#39;s Blog">
+<meta property="og:url" content="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/R/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="PSR&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="list.files() 列出所有的文件 pattern:匹配特定部分 full.names:列出完整路径 recursive:递归查找    gsub() 替换特定字符串 把3中1的部分换成2    read.csv() 从csv中读取数据 sep:按照什么分割数据（默认为，） header:是否存在标题行（默认为存在） stringAsFactors:是否将字符串转为因子类型（默认为转）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-28T07:50:08.393Z">
-<meta property="article:modified_time" content="2024-04-28T07:50:08.393Z">
+<meta property="article:published_time" content="2024-04-28T08:12:21.958Z">
+<meta property="article:modified_time" content="2024-04-28T08:22:13.977Z">
 <meta property="article:author" content="彭澍荣# 博客的作者">
 <meta name="twitter:card" content="summary">
   
@@ -75,46 +75,69 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-note/learn_daily/R/R语言学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/blog/2024/04/28/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-04-28T07:50:08.393Z" itemprop="datePublished">2024-04-28</time>
+    <a href="/blog/2024/04/28/note/learn_daily/R/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:21.958Z" itemprop="datePublished">2024-04-28</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h3 id="list-files"><a href="#list-files" class="headerlink" title="list.files()"></a>list.files()</h3><ul>
+<li>列出所有的文件<ul>
+<li>pattern:匹配特定部分</li>
+<li>full.names:列出完整路径</li>
+<li>recursive:递归查找</li>
+</ul>
+</li>
+</ul>
+<h2 id="gsub"><a href="#gsub" class="headerlink" title="gsub()"></a>gsub()</h2><ul>
+<li>替换特定字符串<ul>
+<li>把<code>3</code>中<code>1</code>的部分换成<code>2</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="read-csv"><a href="#read-csv" class="headerlink" title="read.csv()"></a>read.csv()</h2><ul>
+<li>从csv中读取数据<ul>
+<li>sep:按照什么分割数据（默认为，）</li>
+<li>header:是否存在标题行（默认为存在）</li>
+<li>stringAsFactors:是否将字符串转为因子类型（默认为转）</li>
+</ul>
+</li>
+</ul>
+<h2 id="read-csv-1"><a href="#read-csv-1" class="headerlink" title="read_csv()"></a>read_csv()</h2><ul>
+<li>从csv中读取，直接读取成tibble格式</li>
+</ul>
+<h2 id="subset"><a href="#subset" class="headerlink" title="subset()"></a>subset()</h2><ul>
+<li>从数据框中挑选特定行<ul>
+<li>第二个参数需要满足一定条件</li>
+</ul>
+</li>
+</ul>
+<h2 id="write-csv"><a href="#write-csv" class="headerlink" title="write.csv()"></a>write.csv()</h2><ul>
+<li>保存为csv格式文件<ul>
+<li>sep:按照什么分割</li>
+<li>row.names:是否保存行名</li>
+<li>col.names:是否保存列名</li>
+</ul>
+</li>
+</ul>
+<h2 id="write-csv-1"><a href="#write-csv-1" class="headerlink" title="write_csv()"></a>write_csv()</h2><ul>
+<li>保存文件为csv格式文件</li>
+</ul>
+<h2 id="unique"><a href="#unique" class="headerlink" title="unique()"></a>unique()</h2><ul>
+<li>按照行（数据框）或者元素（向量）去重</li>
+</ul>
+<h2 id="gather-spread"><a href="#gather-spread" class="headerlink" title="gather()&#x2F;spread()"></a>gather()&#x2F;spread()</h2><p><code>gather</code>函数将宽数据转换为长数据，<code>spread</code>函数将长数据转换为宽数据。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/hello-world/" data-id="clvj8egrc0000rsht5yr2dxkx" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/learn_daily/R/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" data-id="clvj9jzbf0000cwhtaflp2wm0" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -124,7 +147,7 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2024/04/28/note/learn_daily/git/GIT%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2024/04/28/note/learn_daily/R/%E8%87%AA%E5%BB%BA%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -133,6 +156,11 @@
       </div>
     </a>
   
+  
+    <a href="/blog/2024/04/28/note/learn_daily/R/R%20for%20data%20science/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
   
 </nav>
 

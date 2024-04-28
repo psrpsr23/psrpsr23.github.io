@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PSR&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="设$k$个序列$s_1,s_{2},s_{3}\dots\dots s_{k}$,，每个序列由同一个字母表中的字符组成  为什么要做MSA 用于描述一组序列之间的相似性关系，以了解一个基因家族的基本特征，寻找motif，保守区域等，用于预测新序列的二级，三级结构 用于描述同源序列之间的亲缘关系的远近，应用到分子进化分析中，是分子进化树的基础 Paralogy旁系同源 基因组内基因复制产生，易发生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PSR&#39;s Blog">
+<meta property="og:url" content="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%A4%9A%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9(MSA)/index.html">
+<meta property="og:site_name" content="PSR&#39;s Blog">
+<meta property="og:description" content="设$k$个序列$s_1,s_{2},s_{3}\dots\dots s_{k}$,，每个序列由同一个字母表中的字符组成  为什么要做MSA 用于描述一组序列之间的相似性关系，以了解一个基因家族的基本特征，寻找motif，保守区域等，用于预测新序列的二级，三级结构 用于描述同源序列之间的亲缘关系的远近，应用到分子进化分析中，是分子进化树的基础 Paralogy旁系同源 基因组内基因复制产生，易发生">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-28T08:12:22.009Z">
+<meta property="article:modified_time" content="2023-12-28T04:57:56.492Z">
+<meta property="article:author" content="彭澍荣# 博客的作者">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="PSR's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">PSR&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Come on!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://psrpsr23.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-note/大三上/生物信息学原理/多序列比对(MSA)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%A4%9A%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9(MSA)/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.009Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设$k$个序列$s_1,s_{2},s_{3}\dots\dots s_{k}$,，每个序列由同一个字母表中的字符组成</li>
+</ul>
+<h2 id="为什么要做MSA"><a href="#为什么要做MSA" class="headerlink" title="为什么要做MSA"></a>为什么要做MSA</h2><ul>
+<li>用于描述一组序列之间的相似性关系，以了解一个基因家族的基本特征，寻找motif，保守区域等，用于预测新序列的二级，三级结构</li>
+<li>用于描述同源序列之间的亲缘关系的远近，应用到分子进化分析中，是分子进化树的基础<ul>
+<li>Paralogy旁系同源<ul>
+<li>基因组内基因复制产生，易发生功能分化</li>
+</ul>
+</li>
+<li>Orthology直系同源<ul>
+<li>物种形成过程中源自同一祖先，通常功能保守</li>
+</ul>
+</li>
+<li>![[Pasted image 20231227121431.png]]</li>
+</ul>
+</li>
+<li>不同物种基因组范围的MSA能分析基因组结构变异</li>
+<li>![[Pasted image 20231227121523.png]]</li>
+</ul>
+<h2 id="怎么做MSA"><a href="#怎么做MSA" class="headerlink" title="怎么做MSA"></a>怎么做MSA</h2><h4 id="如何评估"><a href="#如何评估" class="headerlink" title="如何评估"></a>如何评估</h4><ul>
+<li>按照每个比对的列进行打分，然后加和</li>
+<li>每一列<ul>
+<li>k个变量的打分函数</li>
+<li>用一个k维数组来表示该显式函数</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>逐对加和SP函数<br>$$SP - score(c_{1},c_{2},\dots,c_{k})&#x3D;\sum\limits_{i&#x3D;1}^{k-1}\sum\limits_{j&#x3D;i+1}^{k}p(c_{i},c_{j})$$</p>
+<blockquote>
+<p>$c_{1},c_{2},\dots,c_{3}$是一列中的k个字符，p是关于一对字符相似性的打分函数<br>例：</p>
+<blockquote>
+<p>序列：L L A P G S - G<br>$$-C_{8}^2+2&#x3D;-26$$</p>
+<blockquote>
+<p>其中LL相配，GG相配，加二分<br>规则：相同0分，不同-1分<br>$补充：p(-,-)&#x3D;0$</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="多序列比对算法"><a href="#多序列比对算法" class="headerlink" title="多序列比对算法"></a>多序列比对算法</h4><ul>
+<li>动态规划算法（精确）<ul>
+<li>通过处理得到一个得分最高的序列比对排列</li>
+<li>使用晶格</li>
+<li>![[Pasted image 20231227123340.png]]</li>
+<li>问题<ul>
+<li>计算量极其巨大</li>
+<li>时间复杂度$O(2^kN^k)$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多序列比对优化算法"><a href="#多序列比对优化算法" class="headerlink" title="多序列比对优化算法"></a>多序列比对优化算法</h4><ul>
+<li>针对搜索空间大<ul>
+<li>剪枝技术：将搜索空间限定在一个较小的区域的范围内。<ul>
+<li>若搜索时当前路径得分低于某个下限，则对当前路径剪枝</li>
+</ul>
+</li>
+<li>Carrillo-Lipman方法<ul>
+<li>先进行双序列比对，限制进一步搜索的多维空间，减少计算量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多序列比对近似算法"><a href="#多序列比对近似算法" class="headerlink" title="多序列比对近似算法"></a>多序列比对近似算法</h4><ul>
+<li>启发式算法：多数情况下，计算结果接近最优结果</li>
+<li>渐进法：将序列多重比对转化为亮亮比对，逐渐将两两比对结合起来，形成完整的多系列比对。</li>
+<li>星形比对（近似）<ul>
+<li>给定序列中选择一个核心序列，通过该序列与其他序列两两比对形成所有序列的多重比对<ul>
+<li>$O(kn^2)$</li>
+<li>采用只要是空白，则永远是空白的原则</li>
+<li>逐步增加Sc中的空位字符并且绝不删除</li>
+</ul>
+</li>
+<li>选取核心序列<ul>
+<li>每个都做比对，取最好的</li>
+<li>计算所有的两两比对，取$$\sum sim(s_{i},s_{c})$$</li>
+<li>![[Pasted image 20231227131454.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>树形比对<ul>
+<li>k个待比对序列-k个叶节点的树</li>
+<li>可以计算权值，代表对应分支连接的两个序列的相似性，权值的和就是这棵树的得分</li>
+<li>过程<ul>
+<li>初始化，对于每个序列，生成一个叶节点</li>
+<li>利用AA算法算法合并两个节点为新节点</li>
+<li>直到结束</li>
+</ul>
+</li>
+<li>AA算法<ul>
+<li>两个多重比对序列$\alpha_{1},\alpha_{2}$,其中$\alpha$代表s1和t1的两两比对</li>
+<li>标定$\alpha_{1}$的各列，如果s1在比对中对应位置的编辑操作不是插入或者删除，则标记这列</li>
+<li>对标记的两列进行比对</li>
+<li>对原来的进行恢复</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启发式算法（近似）<ul>
+<li>渐进式比对<ul>
+<li>将多序列比对转化为两两比对，逐渐将两两比对结合起来，形成完整的多序列比对</li>
+<li>现将多个序列进行两两比对，给予这个比较，计算得到一个距离矩阵，该矩阵反应每对序列的关系</li>
+<li>利用距离矩阵建立一个相关树</li>
+<li>从最近的一对开始，逐步归并形成聚类</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多序列比对软件"><a href="#多序列比对软件" class="headerlink" title="多序列比对软件"></a>多序列比对软件</h2><ul>
+<li>ClustalW算法<ul>
+<li>两两比对构建距离矩阵</li>
+<li>构建指导树</li>
+<li>将距离最近的两条序列用动态规划的算法进行比较</li>
+<li>软件：Clustal X</li>
+</ul>
+</li>
+<li>T-Coffee算法<ul>
+<li>整合全局比对和局部比对</li>
+<li>渐进式多序列比对取的最优方法<ul>
+<li>根据序列比对相似性，定义每一对比对上碱基或氨基酸的比对权重</li>
+<li>根据序列比对相似性，定义每一对比对上碱基或氨基酸的比对权重，构建初始比对库</li>
+<li>合并全局比对与局部比对的权重库</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MuSCLE算法<ul>
+<li>初始渐进比对<ul>
+<li>对两条序列，计算距离采用K-mar的思想</li>
+<li>使用UPGMA法构建引导树</li>
+<li>使用渐进法进行多序列比对</li>
+</ul>
+</li>
+<li>优化渐进比对improved progressive<ul>
+<li>给予K-mer得到的树，可能是次优结果。采用给予Kimura距离的方法，重新建树</li>
+<li>使用UPGMA法构建引导树</li>
+<li>使用渐进法进行多序列比对</li>
+</ul>
+</li>
+<li>比对再优化<ul>
+<li>从进化树上挑出一个边，删除</li>
+<li>删除之后，得到两个子树，对每组子树，计算profile</li>
+<li>将两组proflie比对，重新获得多序列比对</li>
+<li>如果该比对的得分较高，则保留该结果，否则丢弃</li>
+<li>重复1-4步，知道收敛或者达到用户指定的重复次数asdfghawdawd</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>局部比对<ul>
+<li>最大期望法</li>
+<li>吉布斯抽样</li>
+<li>隐马尔科夫模型</li>
+</ul>
+</li>
+<li><h2 id="特征序列分析-保守序列（motif）-表示序列每个位置上最有可能出现的字符-统计特征图（profile-提供了多序列比对中每一列出现各种氨基酸-碱基的概率-令-P-P-1-P-2-dots-P-L-P-表示在-alpha-的每一列上各种字符出现的概率分布-P-j-p-j0-p-j1-dots-p-j-a-A代表字母表-P-jk-代表字母表A中第k个字符在第j列出现的频率-第0个字符是特殊的空位符号‘-’-利用上述两种方法可以判断一个序列是否满足一定的特征-给定一个序列-s-a-1-a-2-dots-a-m-，定义字符a在第j位的代价为-w-a-j-sum-limits-k-0-A-w-a-A-k-P-jk-A-代表字母表A的长度-A-k-代表A的第k个字符-A-0-代表空缺字符‘-’-整个序列的代价-w-s-alpha-sum-limits-j-w-a-j-一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应-Pasted-image-20231228125646-png-sequence-logo-描述功能域等保守性的可视化方式-Pasted-image-20231228125754-png"><a href="#特征序列分析-保守序列（motif）-表示序列每个位置上最有可能出现的字符-统计特征图（profile-提供了多序列比对中每一列出现各种氨基酸-碱基的概率-令-P-P-1-P-2-dots-P-L-P-表示在-alpha-的每一列上各种字符出现的概率分布-P-j-p-j0-p-j1-dots-p-j-a-A代表字母表-P-jk-代表字母表A中第k个字符在第j列出现的频率-第0个字符是特殊的空位符号‘-’-利用上述两种方法可以判断一个序列是否满足一定的特征-给定一个序列-s-a-1-a-2-dots-a-m-，定义字符a在第j位的代价为-w-a-j-sum-limits-k-0-A-w-a-A-k-P-jk-A-代表字母表A的长度-A-k-代表A的第k个字符-A-0-代表空缺字符‘-’-整个序列的代价-w-s-alpha-sum-limits-j-w-a-j-一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应-Pasted-image-20231228125646-png-sequence-logo-描述功能域等保守性的可视化方式-Pasted-image-20231228125754-png" class="headerlink" title="特征序列分析  - 保守序列（motif）      - 表示序列每个位置上最有可能出现的字符  - 统计特征图（profile)      - 提供了多序列比对中每一列出现各种氨基酸&#x2F;碱基的概率      - 令$P&#x3D;(P_{1},P_{2},\dots,P_{L})$,$P$表示在$\alpha$的每一列上各种字符出现的概率分布$$P_{j}&#x3D;(p_{j0},p_{j1},\dots,p_{j|a |})$$          - A代表字母表          - $P_{jk}$代表字母表A中第k个字符在第j列出现的频率          - 第0个字符是特殊的空位符号‘-’  - 利用上述两种方法可以判断一个序列是否满足一定的特征      - 给定一个序列$s&#x3D;a_{1}a_{2}\dots a_{m}$，定义字符a在第j位的代价为$$w^{}(a,j)=\sum\limits_{k=0}^{|A|}w(a,A_{k})P_{jk}$$           - |A|代表字母表A的长度           - $A_{k}$代表A的第k个字符           - $A_{0}$代表空缺字符‘-’       - 整个序列的代价$$w^*(s,\alpha)=\sum\limits_{j}w^(a,j)$$      - 一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应  - ![[Pasted image 20231228125646.png]]  - sequence logo:描述功能域等保守性的可视化方式![[Pasted image 20231228125754.png]]"></a>特征序列分析<br>  - 保守序列（motif）<br>      - 表示序列每个位置上最有可能出现的字符<br>  - 统计特征图（profile)<br>      - 提供了多序列比对中每一列出现各种氨基酸&#x2F;碱基的概率<br>      - 令$P&#x3D;(P_{1},P_{2},\dots,P_{L})$,$P$表示在$\alpha$的每一列上各种字符出现的概率分布$$P_{j}&#x3D;(p_{j0},p_{j1},\dots,p_{j|a |})$$<br>          - A代表字母表<br>          - $P_{jk}$代表字母表A中第k个字符在第j列出现的频率<br>          - 第0个字符是特殊的空位符号‘-’<br>  - 利用上述两种方法可以判断一个序列是否满足一定的特征<br>      - 给定一个序列$s&#x3D;a_{1}a_{2}\dots a_{m}$，定义字符a在第j位的代价为$$w^{<code>&#125;(a,j)=\sum\limits_&#123;k=0&#125;^&#123;|A|&#125;w(a,A_&#123;k&#125;)P_&#123;jk&#125;$$           - |A|代表字母表A的长度           - $A_&#123;k&#125;$代表A的第k个字符           - $A_&#123;0&#125;$代表空缺字符‘-’       - 整个序列的代价$$w^*(s,\alpha)=\sum\limits_&#123;j&#125;w^</code>(a,j)$$<br>      - 一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应<br>  - ![[Pasted image 20231228125646.png]]<br>  - sequence logo:描述功能域等保守性的可视化方式![[Pasted image 20231228125754.png]]</h2></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%A4%9A%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9(MSA)/" data-id="clvj9cw5n000mqkhtdjwz6aoc" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E8%B0%B1%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%84%E8%A3%85%E4%B8%8E%E5%85%B6%E4%BB%96%E5%BA%8F%E5%88%97%E5%AF%B9%E6%AF%94%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/04/">四月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/04/28/%E5%BA%8F%E5%88%97%E6%A8%A1%E6%8B%9F%E8%AE%BA%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD%E7%A7%91%E7%A0%94/%E5%BA%8F%E5%88%97%E6%A8%A1%E6%8B%9F%E8%AE%BA%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD%E7%A7%91%E7%A0%94/ZeroBind/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E7%8E%89%E7%B1%B3/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E7%8E%89%E7%B1%B3/%E5%88%86%E5%B8%83%E5%9B%BE/%E5%90%84motif%E5%88%86%E5%B8%83%E5%9B%BE/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 彭澍荣# 博客的作者<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

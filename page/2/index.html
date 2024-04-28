@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PSR&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Record some important knowledge">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PSR&#39;s Blog">
+<meta property="og:url" content="http://psrpsr23.github.io/blog/page/2/index.html">
+<meta property="og:site_name" content="PSR&#39;s Blog">
+<meta property="og:description" content="Record some important knowledge">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="彭澍荣# 博客的作者">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="PSR's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">PSR&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Come on!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://psrpsr23.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-note/大三上/生物信息学原理/蛋白质性质和结构分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E8%9B%8B%E7%99%BD%E8%B4%A8%E6%80%A7%E8%B4%A8%E5%92%8C%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.014Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>分析蛋白质的一级结构<ul>
+<li>等电点、分子量、氨基酸组成、疏水性、保守结构域、保守位点</li>
+</ul>
+</li>
+<li>分析膜蛋白质<ul>
+<li>跨膜或内在膜蛋白、锚定蛋白、外周蛋白<ul>
+<li>跨膜区一般形成$\alpha-螺旋$</li>
+<li>直接与脂双分子层连接</li>
+<li>通过糖分子间接与脂结合</li>
+</ul>
+</li>
+<li>预测膜整合蛋白的跨膜区</li>
+<li>分析膜锚定蛋白的GPi位点</li>
+<li>分析蛋白质的翻译后修饰<ul>
+<li>分析信号肽及其剪切位点 SignalP</li>
+<li>蛋白质糖基化-分析糖链连接点</li>
+</ul>
+</li>
+<li>分析蛋白质的亚细胞定位 DeepLoc     <ul>
+<li>了解蛋白质功能、互作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="蛋白质结构预测"><a href="#蛋白质结构预测" class="headerlink" title="蛋白质结构预测"></a>蛋白质结构预测</h2><ul>
+<li>蛋白质二级结构预测<ul>
+<li>$\alpha-螺旋$，$\beta-折叠$、转角、环、无规则卷</li>
+<li>DSSP：已知三维结构的蛋白质二级结构</li>
+<li>每一段相邻的氨基酸残基具有形成一定二级结构的倾向<ul>
+<li>统计学方法<ul>
+<li>单个氨基酸经验参数法<ul>
+<li>构象倾向性因子</li>
+</ul>
+</li>
+<li>氨基酸片段的统计分析</li>
+</ul>
+</li>
+<li>基于立体化学原则的物理化学方法<ul>
+<li>LIM法</li>
+</ul>
+</li>
+<li>神经网络和人工智能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>蛋白质三级结构预测<ul>
+<li>同源建模法<ul>
+<li>是一种基于知识的蛋白质结构预测方法。根据对蛋白质结构数据库PDB中的蛋白质结构比较分析研究得知，任何一对蛋白质，只要它们序列的长度达到一定程度，序列相似性超过30%，就可以保证他们具有相似的三维结构。</li>
+</ul>
+</li>
+<li>折叠识别法<ul>
+<li>序列相似的有相似的折叠模式。</li>
+</ul>
+</li>
+<li>从头预测法<ul>
+<li>指从蛋白质的一级结构出发，根据物理化学、量子化学、量子物理的基本原理，利用各种理论方法计算蛋白质肽链所有可能构象的能量，然后从中找到能量最低的构象，作为蛋白质的天然构象。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E8%9B%8B%E7%99%BD%E8%B4%A8%E6%80%A7%E8%B4%A8%E5%92%8C%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/" data-id="clvj9cw5o000qqkhtgoak4ujq" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/绪论" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E7%BB%AA%E8%AE%BA/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.013Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="生物信息学——基因组时代的呼唤"><a href="#生物信息学——基因组时代的呼唤" class="headerlink" title="生物信息学——基因组时代的呼唤"></a>生物信息学——基因组时代的呼唤</h2><p>第一次科学浪潮：科学革命<br>第二次科学浪潮：化学的发展<br>第三次科学浪潮：物理学的革命<br>第四次科学浪潮：信息技术、生命科学<br>![[Pasted image 20231215210507.png]]</p>
+<center><font face="STCAIYUN" size=5>图一：测序数量基因个数</font></center>
+![[Pasted image 20231215210937.png]]
+<center><font face="STCAIYUN" size=5>图二：测序发展历史数</font></center>
+![[Pasted image 20231215211347.png]]
+<center><font face="STCAIYUN" size=5>图三：一些植物的基因组测序</font></center>
+
+<p>![[Pasted image 20231215211628.png]]</p>
+<p>基于以上理论，生物学家不仅必须称为计算机学者，而且也要改变他们研究生命现象的途径。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">	A(&quot;传统生物学：实验科学&quot;) --&gt; B(&quot;高通量数据获取日益实现自动化、半自动化&quot;)</span><br><span class="line">	A(&quot;传统生物学：实验科学&quot;) --&gt; C(&quot;海量数据&quot;)</span><br><span class="line">	A(&quot;传统生物学：实验科学&quot;) --&gt; D(&quot;更复杂层次的生物学问题&quot;)</span><br><span class="line">	B(&quot;高通量数据获取日益实现自动化、半自动化&quot;) --&gt; E(&quot;分析、筛选大量新数据&quot;)</span><br><span class="line">	C(&quot;海量数据&quot;) --&gt; E(&quot;分析、筛选大量新数据&quot;)</span><br><span class="line">	D(&quot;更复杂层次的生物学问题&quot;) --&gt; E(&quot;分析、筛选大量新数据&quot;)</span><br><span class="line">	E(&quot;分析、筛选大量新数据&quot;) --&gt; F(&quot;生物中的复杂网络、复杂过程、复杂现象&quot;)</span><br><span class="line">	F(&quot;生物中的复杂网络、复杂过程、复杂现象&quot;) --&gt; G(&quot;理论生物学&quot;)</span><br><span class="line">	G(&quot;理论生物学&quot;) --&gt; H(&quot;生物信息学&quot;)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>生物信息学<ul>
+<li>生物信息学是一门交叉学科。它包含了生物信息的获取、处理、存储、分发、分析和解释等在内的所有方面，它综合运用数学、计算机科学和生物学的各种工具，来阐明和理解大量数据所包含的生物学意义<br>![[Pasted image 20231215214214.png]]<br>![[Pasted image 20231216112343.png]]</li>
+</ul>
+</li>
+</ul>
+<center><font face="STCAIYUN" size=5>图四、五：生物信息学应用</font></center>
+
+
+<h2 id="生物信息学发展简史"><a href="#生物信息学发展简史" class="headerlink" title="生物信息学发展简史"></a>生物信息学发展简史</h2><p>![[Pasted image 20231216112443.png]]<br>![[Pasted image 20231216112451.png]]![[Pasted image 20231216112456.png]]</p>
+<center><font face="STCAIYUN" size=5>图六：生物信息学发展</font></center>
+
+<ul>
+<li>纵观生物信息学的发展历史，可分为四个主要阶段<ul>
+<li>萌芽期（60-70年代）<ul>
+<li>以Dayhoff替换矩阵和Neelleman-Wunsch算法为代表</li>
+</ul>
+</li>
+<li>形成期（80年代）<ul>
+<li>以分子数据库和FASTA为代表</li>
+</ul>
+</li>
+<li>基因组测序时代（90年代-2005）<ul>
+<li>以模式基因组测序与BLAST为代表</li>
+</ul>
+</li>
+<li>高通量测序时代（2005-）<ul>
+<li>以第二代和代三代测序技术和基因组重测序为代表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="人类基因组计划（HGP）"><a href="#人类基因组计划（HGP）" class="headerlink" title="人类基因组计划（HGP）"></a>人类基因组计划（HGP）</h2><ul>
+<li><p>目标：整体上破解人类遗传信息的奥秘、 ![[Pasted image 20231216113449.png]]</p>
+<center><font face="STCAIYUN" size=5>图七：HGP的发展</font></center>
+</li>
+<li><p>生命活动三要素</p>
+<ul>
+<li>物质，能量，信息</li>
+<li>DNA：遗传物质，双螺旋结构</li>
+<li>基因：具有遗传效应的DNA分子片段</li>
+</ul>
+</li>
+<li><p>基因组：包含细胞或生物体的全套遗传信息的全部与遗传物质</p>
+</li>
+<li><p>人类基因组：$~3.1*10^9bp$</p>
+</li>
+<li><p>最终目标：通过国际合作，用15年的时间（1990-2005）至少投入30亿美金，构建详细的人类基因组遗传图和物理图，确定人类DNA的全部核苷酸序列，定位约10万基因，并对其他生物进行类似的研究</p>
+<ul>
+<li>遗传图：<code>基因或DNA标志在染色体上的相对位置与遗传距离</code></li>
+<li>物理图：<code>指标明一些界标（例如，限制酶的切点、基因等）在DNA上的位置，图距以物理长度为单位，例如染色体的带区、核苷酸对数目等</code></li>
+<li>序列图：</li>
+</ul>
+</li>
+<li><p>终极目标：</p>
+<ul>
+<li>阐明人类基因组全部DNA序列</li>
+<li>识别基因</li>
+<li>建立储存这些信息的数据框</li>
+<li>开发数据分析工具</li>
+<li>研究HGP实施所带来的伦理、法律和社会问题<br>![[Pasted image 20231216125737.png]]</li>
+</ul>
+</li>
+<li><p>生物复杂性问题</p>
+<ul>
+<li>所有多细胞物种的编码基因数目差异不大：&#96;2-3万</li>
+<li>物种间的细胞数量和种类差异很大</li>
+<li>生物的复杂度主要由什么来控制？<ul>
+<li>基因组的转录情况<ul>
+<li>编码蛋白质序列<ul>
+<li>人 1-2%</li>
+<li>线虫 25%</li>
+</ul>
+</li>
+<li>基因组转录水平<ul>
+<li>人 60%</li>
+<li>线虫 70%</li>
+</ul>
+</li>
+<li>绝大部分的转录产物是非编码RNA</li>
+</ul>
+</li>
+<li>物种之间非编码RNA差异最大</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ENCODE（DNA元件百科）</p>
+<ul>
+<li>基因组不是由孤立的基因和大量”无用DNA片段“组成的，而是一个复杂的网络系统</li>
+<li>编码基因、调控元件以及非编码RNA之间，有着复杂的相互作用，共同控制着人类的生理活动</li>
+</ul>
+</li>
+<li><p>ENCODE Phase II</p>
+<ul>
+<li>引入高通量测序技术</li>
+<li>还加入了果蝇和线虫</li>
+</ul>
+</li>
+<li><p>ENCODE Phase III</p>
+<ul>
+<li>扩展到了小鼠</li>
+<li>已经分别在人类和小鼠中生成了近100万个和超过30万个顺式调控元件的注释</li>
+</ul>
+</li>
+<li><p>ENCODE Phase IV</p>
+<ul>
+<li>研究更广泛的生物样本</li>
+</ul>
+</li>
+<li><p>支持</p>
+<ul>
+<li>CGDS（计算基因组学和数据科学计划）<ul>
+<li>基因组分析工具和软件资源</li>
+<li>数据管理资源</li>
+<li>基因组信息学培训和劳动力开发</li>
+</ul>
+</li>
+<li>Alliance（基因组资源联盟）<ul>
+<li>6个模式生物数据库</li>
+<li>基因本体联盟</li>
+</ul>
+</li>
+<li>GTP（基因组技术计划）<ul>
+<li>核酸测序技术开发</li>
+<li>基因组技术开发</li>
+<li>合成核酸技术开发</li>
+</ul>
+</li>
+<li>GVP（基因组变异计划）<ul>
+<li>在整个基因组中大规模发现和分型单核苷酸多态性（SNPs）、插入缺失（InDels）和其他形式的变异</li>
+<li>开发遗传变异和单倍型的高分辨率图谱</li>
+<li>开发用于SNP、其他形式的遗传变异、单倍型和复杂形状的大规模实验和统计分析方法</li>
+<li>开发将遗传变异与表型、疾病和功能联系起来的统计方法</li>
+</ul>
+</li>
+<li>HGRP（人类基因组参考计划）<ul>
+<li>人类基因组参考中心</li>
+<li>高质量人类参考基因组</li>
+<li>基因组参考表达</li>
+<li>泛基因组信息学工具开发</li>
+<li>全基因组测序技术开发</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="生物信息学主要研究内容和方法"><a href="#生物信息学主要研究内容和方法" class="headerlink" title="生物信息学主要研究内容和方法"></a>生物信息学主要研究内容和方法</h2><ul>
+<li>主要研究内容<ul>
+<li>生物学数据的收集、存储、管理与提供</li>
+<li>基因组序列信息的提取和分析</li>
+<li>分子进化和比较基因组学</li>
+<li>生物大分子结构模拟和药物设计</li>
+<li>各类高通量组学数据分析与利用</li>
+<li>生物信息分析的技术与方法研究</li>
+</ul>
+</li>
+<li>主要研究方法<ul>
+<li>基于数据挖掘的方法</li>
+<li>基于模拟分析的方法</li>
+</ul>
+</li>
+<li>核酸蛋白质序列研究分析<ul>
+<li>序列：由重复的核苷酸或氨基酸单元组成的线性高分子，具有高度有序并能完成特定生物学功能的三维结构</li>
+<li>目的：揭示序列蕴含的更高级的结构和功能信息</li>
+<li>主要思想：具有相似序列的分子，可能具有相似的三维结构和生物学功能。</li>
+<li>首要任务：提取反映结构、功能性质的序列特征</li>
+<li>主要方法：基于数据挖掘或知识发现的方法：<ul>
+<li>统计方法</li>
+<li>机器学习</li>
+<li>神经网络</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	a(&quot;序列&quot;) --&gt; b(&quot;结构&quot;) --&gt; c(&quot;功能&quot;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>主要算法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">生命科学中的问题</th>
+<th align="center">数理问题&#x2F;算法</th>
+<th align="center">章节数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">相似性搜寻</td>
+<td align="center">两两序列比对<br>相似序列的数据库搜寻<br>多序列比对<br>系统发育树的重建<br>短序列比对<br>基因组组装&#x2F;拼接</td>
+<td align="center">动态规划算法<br>BWT<br>Bruijn graph<br>string graph</td>
+<td align="center">3-5章</td>
+</tr>
+<tr>
+<td align="center">结构&#x2F;功能的从头预测</td>
+<td align="center">蛋白质三级结构预测</td>
+<td align="center"></td>
+<td align="center">9章</td>
+</tr>
+<tr>
+<td align="center">结构&#x2F;功能的基于知识预测</td>
+<td align="center">编码区预测（基因结构预测）<br>蛋白质三维结构预测</td>
+<td align="center">随机过程方法（HMM）</td>
+<td align="center">6、9章</td>
+</tr>
+<tr>
+<td align="center">生物大分子类</td>
+<td align="center"></td>
+<td align="center">积累算法</td>
+<td align="center">8章</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>统计方法</p>
+</li>
+<li><p>从事务的外在数量上的表现去推断事务可能的规律性</p>
+<ul>
+<li>回归分析：多元回归、自回归</li>
+<li>判别分析：线性判别分析、非线性判别分析</li>
+<li>积累分析：系统聚类分析、动态聚类分析</li>
+<li>探索性分析：主成分分析、相关性分析</li>
+</ul>
+</li>
+<li><p>机器学习方法</p>
+<ul>
+<li>学习：系统通过执行某种过程而改进它的性能</li>
+<li>生物分子相互作用的复杂系统模拟<ul>
+<li>单个分子层次的遗传信息表达</li>
+<li>分子网络层次的遗传信息表达（生物复杂系统）</li>
+</ul>
+</li>
+<li>系统水平的生物信息学方法<ul>
+<li>静态研究：路径计算、二元关系和演绎</li>
+<li>动态研究：微分方程组、Petri网模型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>系统生物学</p>
+<ul>
+<li>计算生物学方法</li>
+<li>复杂系统理论与方法</li>
+<li>生物技术</li>
+<li>生物学数据</li>
+</ul>
+</li>
+<li><p>近期热点</p>
+<ul>
+<li>深度学习<ul>
+<li>深度学习：是一种以人工神经网络为架构，对资料进行表征学习的算法<ul>
+<li>适合用来挖掘大量的、多维度数据背后的潜在规则</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单细胞组学<ul>
+<li>单细胞测序通过单个细胞进行基因组、转录组及表观基因组水平的测序，获得相应数据并进行信息分析的技术<ul>
+<li>解决用组织样本测序无法解决的细胞异质性难题，为解析单个细胞的行为、机制及其与机体的关系等提供了新方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="DNA测序技术"><a href="#DNA测序技术" class="headerlink" title="DNA测序技术"></a>DNA测序技术</h2><ul>
+<li><p>第一代测序技术——DNA双脱氧链终止法测序（sanger）</p>
+<ol>
+<li>大量复制DNA，并且加入引物</li>
+<li>将他们分别放入带有混合氨基酸的溶液中，并且加入终止氨基酸ddNTP</li>
+<li>进行复制反应</li>
+<li>进行凝胶电泳</li>
+<li>得到测序结果</li>
+</ol>
+<ul>
+<li>准确率高</li>
+<li>速度慢，成本高</li>
+</ul>
+</li>
+<li><p>第二代测序技术——Illumina Solexa流程</p>
+<ul>
+<li>将目标DNA剪切为小片段</li>
+<li>单分子独立扩增</li>
+<li>每次只复制一个碱基(A,C,T,G)并检测信号</li>
+<li>高分辨率的成像系统</li>
+<li>速度显著提高，成本明显降低</li>
+<li>读长短</li>
+</ul>
+</li>
+<li><p>第三代测序技术——单分子测序</p>
+<ul>
+<li>基本原理：DNA 聚合酶和模板结合，4 色荧光标记4 种碱基（即是dNTP），在碱基配对阶段，不同碱基的加入，会发出不同光，根据光的波长与峰值可判断进入的碱基类型。</li>
+<li>长读长、速度快、便携</li>
+<li>错误率较高</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E7%BB%AA%E8%AE%BA/" data-id="clvj9cw5o000pqkht5id0fsad" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/生物数据库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E7%94%9F%E7%89%A9%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.012Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>什么是数据库<ul>
+<li>用于收集、整理、储存、加工、发布和检索数据的系统</li>
+<li>是存储在计算机系统内的有结构的数据集合，是相关数据的集合。数据由数据库管理系统统一管理和维护<ul>
+<li>原始数据</li>
+<li>注释</li>
+</ul>
+</li>
+<li>一个数据库通常链接了多个数据库</li>
+</ul>
+</li>
+<li>什么数据可以用来创建数据库<ul>
+<li>核苷酸序列<ul>
+<li>DNA</li>
+<li>RNA</li>
+</ul>
+</li>
+<li>蛋白质序列和结构</li>
+<li>序列与结构注释<ul>
+<li>基因注释</li>
+<li>功能注释</li>
+</ul>
+</li>
+<li>代谢产物（底物、产物、酶</li>
+</ul>
+</li>
+<li>核苷酸数据库<ul>
+<li>GenBank<ul>
+<li>美国NCBI的数据库</li>
+<li>生信领域的一个重要的管理机构<ul>
+<li>建立和管理分子生物学和生物医学领域的公共数据库</li>
+<li>发展新的分析软件</li>
+</ul>
+</li>
+<li>默认使用GenBank flatfile格式![[Pasted image 20231220114205.png]]![[Pasted image 20231220114215.png]]![[Pasted image 20231220114657.png]]<ul>
+<li>ESF(序列表达标签)<ul>
+<li>cDNA的5或3端的序列</li>
+<li>长度200-500bp</li>
+<li>用于勘测某个生物的转录组</li>
+</ul>
+</li>
+<li>TSA<ul>
+<li>非实验直接获得</li>
+<li>不同克隆的多条序列经过生物信息学软件拼接得到</li>
+<li>只能由产生原始序列的研究者递交</li>
+</ul>
+</li>
+<li>TPA<ul>
+<li>第三方提供注释</li>
+</ul>
+</li>
+<li>GSS<ul>
+<li>基因组短序列</li>
+<li>转座子插入位点的侧翼序列</li>
+</ul>
+</li>
+<li>STS<ul>
+<li>短序列，仅在基因组中出现一次</li>
+<li>引物形式存储与数据库中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EMBL格式，包含的内容与GenBank相同</li>
+<li>最简单的序列格式——FASTA<ul>
+<li>&gt;序列信息，注释信息</li>
+<li>具体序列</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTGS数据库<ul>
+<li>GenBank的二级数据库</li>
+<li>尚未完成测序的重叠组的序列</li>
+<li>新序列的增加速度很快![[Pasted image 20231220115437.png]]</li>
+<li>鸟枪法测序流程![[Pasted image 20231220115552 1.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基因组数据库<ul>
+<li>NCBI的另一个数据库</li>
+<li>测序完成和正在测序物种基因组序列、遗传图、物理图</li>
+<li>序列收集在GenBank</li>
+<li>NCBI主页选择Genome后输入关键词</li>
+</ul>
+</li>
+<li>其他高通量测序相关数据库<ul>
+<li>单核苷酸多态性(SNP)数据库<ul>
+<li>数据种类<ul>
+<li>SNP&gt;99%</li>
+<li>Small Insertion&#x2F;deletion</li>
+</ul>
+</li>
+<li>发现致病基因、进化分析、群体遗传分析、关联分析的遗传标记等</li>
+</ul>
+</li>
+<li>基因组结构变异数据库<ul>
+<li>dbVar</li>
+<li>NCBI的数据库</li>
+<li>基因组大片段的<ul>
+<li>插入</li>
+<li>缺失</li>
+<li>倒位</li>
+<li>易位</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>非编码RNA数据库<ul>
+<li>RNAcentral</li>
+</ul>
+</li>
+<li>国家生物信息中心<ul>
+<li>数据资源部</li>
+</ul>
+</li>
+<li>国家基因组科学数据中心</li>
+<li>组学原始数据归档库</li>
+</ul>
+</li>
+<li>蛋白质数据库<ul>
+<li>Uniport蛋白质数据库<ul>
+<li>包含<ul>
+<li>UniPortKB</li>
+<li>UniRef</li>
+<li>UniParc</li>
+</ul>
+</li>
+<li>来源于实验的有详细注释的序列和自动注释序列</li>
+<li>检索<ul>
+<li>在数据库主页搜索框选择“Protein Knowledgebase”库，使用关键词检索</li>
+<li>![[Pasted image 20231220120654.png]]![[Pasted image 20231220120659 1.png]]![[Pasted image 20231220120705 1.png]]![[Pasted image 20231220120709 1.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PIR蛋白质数据库<ul>
+<li>信息整合的蛋白质序列数据库</li>
+<li>蛋白质序列分类数据库</li>
+<li>蛋白质翻译后修饰信息数据库</li>
+</ul>
+</li>
+<li>蛋白质结构数据库<ul>
+<li>PDB<ul>
+<li>182949个结构图</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>蛋白质结构分类数据库<ul>
+<li>SCOP对已知三维结构（PDB）的蛋白质进行分类，人工分类</li>
+<li>CATH利用程序自动化分类</li>
+</ul>
+</li>
+<li>蛋白质功能与数据库<ul>
+<li>一般指蛋白质序列中一段保守的区域，能够独立行使功能</li>
+<li>许多蛋白包括多个结构功能域<ul>
+<li>PROSITE</li>
+<li>Pfam</li>
+<li>SMART</li>
+<li>InterPro数据库</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>蛋白质分子互作数据库</li>
+</ul>
+</li>
+<li>通路数据库<ul>
+<li>代谢通路数据库<ul>
+<li>KEGG<ul>
+<li>酶和代谢、信号转导通路数据库<ul>
+<li>各种代谢、遗传等路径图</li>
+<li>可检索参于各种路径的基因</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PMN</li>
+<li>MetaCyc</li>
+<li>Reactome</li>
+</ul>
+</li>
+<li>代谢组学数据库<ul>
+<li>MetaboLights</li>
+<li>HMDB</li>
+</ul>
+</li>
+<li>其他通路数据库<ul>
+<li>Pathguide</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>文献数据库<ul>
+<li>PubMed<ul>
+<li>美国国家医学图书馆的数据库</li>
+<li>医学、分子生物学、基础生物学</li>
+<li>5400多种刊物，来源于80多个国家</li>
+<li>文献年限1965年至今</li>
+<li>提供摘要，全文链接</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="向数据库提交和修改数据"><a href="#向数据库提交和修改数据" class="headerlink" title="向数据库提交和修改数据"></a>向数据库提交和修改数据</h2><ul>
+<li>发表文章需要提交序列</li>
+<li>数据库中的数据由大家无偿提供、共同享用</li>
+<li>GenBank<ul>
+<li>主页-&gt;菜单-&gt;BankIt</li>
+<li>使用Sequin方法提交序列</li>
+<li>修改需要邮件联系</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E7%94%9F%E7%89%A9%E6%95%B0%E6%8D%AE%E5%BA%93/" data-id="clvj9cw5o000rqkht1fq4amlk" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/总复习——计算" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E6%80%BB%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.011Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>![[Pasted image 20240117213854.png]]<br>![[Pasted image 20240117213924.png]]<br>![[Pasted image 20240117213934.png]]![[Pasted image 20240117214004.png]]<br>![[Pasted image 20240117214009.png]]</p>
+<h2 id="PSSM"><a href="#PSSM" class="headerlink" title="PSSM"></a>PSSM</h2><p>![[Pasted image 20240117214133.png]]</p>
+<h2 id="隐马模型"><a href="#隐马模型" class="headerlink" title="隐马模型"></a>隐马模型</h2><p>![[Pasted image 20240117214859.png]]![[Pasted image 20240117215059.png]]<br>![[Pasted image 20240117215112.png]]</p>
+<p>![[Pasted image 20240117215135.png]]<br>![[Pasted image 20240117215224.png]]![[Pasted image 20240117215234.png]]<br>![[Pasted image 20240117215241.png]]</p>
+<h2 id="UPGMA"><a href="#UPGMA" class="headerlink" title="UPGMA"></a>UPGMA</h2><p>![[Pasted image 20240117215527.png]]<br>![[Pasted image 20240117215533.png]]<br>![[Pasted image 20240117215538.png]]![[Pasted image 20240117215545.png]]</p>
+<h2 id="连锁不平衡LD"><a href="#连锁不平衡LD" class="headerlink" title="连锁不平衡LD"></a>连锁不平衡LD</h2><p>![[Pasted image 20240117221237.png]]<br>![[Pasted image 20240117221503.png]]</p>
+<h2 id="BWT"><a href="#BWT" class="headerlink" title="BWT"></a>BWT</h2><p>![[Pasted image 20240117222214.png]]<br>![[Pasted image 20240117222222.png]]<br>![[Pasted image 20240117222228.png]]<br>![[Pasted image 20240117222242.png]]</p>
+<h2 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h2><p>![[Pasted image 20240117222513.png]]<br>![[Pasted image 20240117222521.png]]</p>
+<h2 id="Quantile-normalization"><a href="#Quantile-normalization" class="headerlink" title="Quantile normalization"></a>Quantile normalization</h2><p>![[Pasted image 20240117220133.png]]<br>![[Pasted image 20240117220144.png]]</p>
+<h2 id="Median-Polishing"><a href="#Median-Polishing" class="headerlink" title="Median Polishing"></a>Median Polishing</h2><p>![[Pasted image 20240117220033.png]]![[Pasted image 20240117220037.png]]<br>![[Pasted image 20240117220043.png]]</p>
+<h2 id="TPR、FPR、FDR"><a href="#TPR、FPR、FDR" class="headerlink" title="TPR、FPR、FDR"></a>TPR、FPR、FDR</h2><p>![[Pasted image 20240117220222.png]]</p>
+<h2 id="Q-value"><a href="#Q-value" class="headerlink" title="Q-value"></a>Q-value</h2><p>![[Pasted image 20240117220510.png]]$$Q-value&#x3D;\frac{p_{k}*m}{k}$$</p>
+<h2 id="ORA"><a href="#ORA" class="headerlink" title="ORA"></a>ORA</h2><p>![[Pasted image 20240117220650.png]]<br>![[Pasted image 20240117220701.png]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E6%80%BB%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97/" data-id="clvj9cw5n000oqkhtcaws6pza" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/总复习——原理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E6%80%BB%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%8E%9F%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.010Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="序列比对"><a href="#序列比对" class="headerlink" title="序列比对"></a>序列比对</h3><ul>
+<li>两序列比对<ul>
+<li>动态规划<code>将一个问题，拆分成一个个子问题，直到子问题可以直接解决。然后，把子问题的答案保存起来，以减少重复计算，再根据子问题答案反推，得出原问题解的一种方法</code>![[Pasted image 20231221151920.png]]</li>
+<li>寻求两序列间距离的最小即最短距离</li>
+<li>在给定计分规则的情况下，数学上可证明能给出具有最高比对打分的对比矩阵。</li>
+<li>动态规划进行序列比对的基本思想<ul>
+<li>在(i,j)处的最佳排列是在(i,j)之前最佳排列加上i和j的最佳排列</li>
+<li>重复过程直到两个序列的终点</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Smith-Waterman算法<ul>
+<li>比较的时候加入0</li>
+<li>附初始值为零</li>
+<li>从最大值回溯到0</li>
+</ul>
+</li>
+<li>Semi-Global Alignment(半全局比对)<ul>
+<li>只第一列初始化为0</li>
+<li>最后一列的最大值开始回溯</li>
+</ul>
+</li>
+<li>BLAST算法<ul>
+<li>对于待比对或检索的序列，建立词列表或哈希表</li>
+<li>确定搜索目标数据库中所有包含与上述词列表中词完全一样的序列（hit）</li>
+<li>对上述的每一条序列中，在匹配区域（hit）向两端以动态规划算法向外延伸，扩展对比区域；得到高得分联配对（HSP）</li>
+</ul>
+</li>
+<li>多序列比对<ul>
+<li>SP得分![[Pasted image 20240118114320.png]]</li>
+<li>精确算法</li>
+<li>优化算法<ul>
+<li>剪枝技术<ul>
+<li>将搜索空间限定在一个较小的区域范围内</li>
+</ul>
+</li>
+<li>Carrillo-Lipman方法<ul>
+<li>先进行双序列比对</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>近似算法<ul>
+<li>星形比对<ul>
+<li>在给定的若干序列中，选择一个核心序列，通过该序列与其它序列的两两比对形成所有序列的多重比对a，从而使得a在核心序列和任何一个其它序列方向的投影是最优的两两比对。$$\sum sim(s_{i},s_{c})$$</li>
+</ul>
+</li>
+<li>树形比对<ul>
+<li>将序列赋予树的内部节点，可以计算树中每个分支的权值</li>
+<li>权值代表对应分支连接的两个序列之间的相似性</li>
+<li>所有权值的和就是这棵树的得分</li>
+</ul>
+</li>
+<li>渐进式比对<ul>
+<li>将序列多重比对转化为两两比对，逐渐将两两比对结合起来，形成完整的多序列比对。</li>
+<li>先将多个序列进行两两比对，基于这些比较，计算得到一个距离矩阵，该矩阵反映每对序列的关系</li>
+<li>利用距离矩阵，建立一棵“相关树（指导树）”</li>
+<li>从最接近的一对序列出发，逐步归并形成比对的聚类，直到所有序列处理完。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="隐马尔可夫模型"><a href="#隐马尔可夫模型" class="headerlink" title="隐马尔可夫模型"></a>隐马尔可夫模型</h3><ul>
+<li>一个隐马尔可夫模型 (HMM) 是一个五元组：(ΩX, ΩO, A, B, π)<ul>
+<li>状态集 ΩX &#x3D; {q1,…,qN}：状态的有限集合</li>
+<li>观测集 ΩO &#x3D; {v1,…,vM}：观察值的有限集合</li>
+<li>转移概率矩阵 A &#x3D; {aij}， aij &#x3D; p(Xt+1 &#x3D; qj |Xt &#x3D; qi)</li>
+<li>输出概率矩阵 B &#x3D; {bik}，bik &#x3D; p(Ot &#x3D; vk | Xt &#x3D; qi)</li>
+<li>初始状态分布 π &#x3D; {πi}， πi &#x3D; p(X1 &#x3D; qi)</li>
+</ul>
+</li>
+<li>三个基本问题<ul>
+<li>评估问题 (Evaluation)向前算法<ul>
+<li>给定模型，求某个观察值序列的概率p(σ|λ)</li>
+</ul>
+</li>
+<li>解码问题 (Decoding)Viterbi算法<ul>
+<li>对于给定模型和观察值序列，求可能性最大的状态序列</li>
+<li>Bellman最优性原理： 一个过程的最优策略具有这样的性质，即无论过去状态和决策如何，对前面决策形成的状态而言，余下的策略必构成最优策略。</li>
+</ul>
+</li>
+<li>学习问题 (Learning)向前向后算法<ul>
+<li>对于给定的一个观察值序列，调整参数λ，使得观察值出现的概率p(σ|λ)最大</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="概率频率相关"><a href="#概率频率相关" class="headerlink" title="概率频率相关"></a>概率频率相关</h2><h3 id="频率比值-概率比值"><a href="#频率比值-概率比值" class="headerlink" title="频率比值&#x2F;概率比值"></a>频率比值&#x2F;概率比值</h3><ul>
+<li>计分矩阵<ul>
+<li>序列比对过程中使用的计分规则，是序列比对的重要组成部分，他给出序列比对中碱基或氨基酸匹配或错配值，故又称替换矩阵</li>
+<li>DNA替换矩阵<ul>
+<li>PAM矩阵 几就是自乘几次</li>
+</ul>
+</li>
+<li>氨基酸替换矩阵<ul>
+<li>Dayhoff矩阵</li>
+<li>BLOSUM替换矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PSSM<ul>
+<li>要构建出PSSM矩阵，首先要得到position frequency matrix (PFM)，即在每个位置的四种核苷酸出现的次数。</li>
+<li>根据碱基频数分布矩阵首先计算出碱基频率分布矩阵，称之为position probability matrix (PPM)。</li>
+<li>在PPM矩阵基础上，用背景序列的碱基分布频率来校正对应的值，就可以得到PWM矩阵。![[Pasted image 20240118122613.png]]</li>
+<li>序列特征分析![[Pasted image 20240118122735.png]]</li>
+</ul>
+</li>
+<li>LOD<ul>
+<li>LOD值：logarithm of the odds score，<ul>
+<li>LOD&#x3D;log10(L1&#x2F;L0)，L1是这个位点有QTL的概率，L0是这个位点无QTL的概率。如果LOD&#x3D;3，则意味着这个位点有QTL的概率是无QTL的概率的1000倍。</li>
+</ul>
+</li>
+<li>LOD置信区间<ul>
+<li>2-LOD置信区间就是LOD波动曲线从峰的最大值降低2的时候(Y轴), 对应在遗传图谱上跨越的区域(X轴)。2-LOD置信区间大概对应99.8%的置信区间，即功能基因有99.8%概率已经落在这个区域内了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Chou-Fasman法<ul>
+<li>是一种基于单个氨基酸残基统计的经验预测方法。	通过统计分析，获得的每个残基出现于特定二级结构构象的倾向性因子，进而利用这些倾向性因子预测蛋白质的二级结构。</li>
+<li>Pi &#x3D; Ai &#x2F; Ti  	(i&#x3D; ,β,c, t)【】	<ul>
+<li>Ti是所有被统计残基处于构象态i的比例；</li>
+<li>Ai是第A种残基处于构象态i 的比例；</li>
+<li>Pi大于1.0表示该残基倾向于形成二级结构构象i，小于1.0则表示倾向于形成其它构象。</li>
+</ul>
+</li>
+<li>蛋白质二级结构的组成规律性比较强</li>
+<li>三种基本二级结构平均占氨基酸残基的85%</li>
+<li>各种二级结构非均匀地分布在蛋白质中</li>
+<li>每种氨基酸出现在各种二级结构中倾向或者频率是不同的</li>
+<li>在序列中寻找规则二级结构的成核位点和终止位点。 </li>
+<li>规则<ul>
+<li>螺旋规则</li>
+<li>折叠规则</li>
+<li>转角规则</li>
+<li>重叠规则</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="马可夫链、隐马尔科夫模型"><a href="#马可夫链、隐马尔科夫模型" class="headerlink" title="马可夫链、隐马尔科夫模型"></a>马可夫链、隐马尔科夫模型</h3><ul>
+<li>具有马尔可夫性的随机序列称为马尔可夫过程 ，或称马尔可夫链。<ul>
+<li>马尔可夫链的时间和状态都离散</li>
+<li>一阶马尔可夫模型是最简单的马尔可夫模型，它的状态选择仅与前一个状态有关</li>
+<li>n阶马尔可夫模型状态间的转移仅依赖于前n个状态的马尔科夫过程</li>
+<li>马尔可夫模型(Markov Model)有时又称作可视马尔可夫模型(Visible Markov Model, VMM), 由于其每个状态代表了一个可观察的事件</li>
+</ul>
+</li>
+<li>在马尔科夫模型的基础上，增加不可直接观察的参数（隐藏状态）</li>
+</ul>
+<h3 id="贝叶斯推断"><a href="#贝叶斯推断" class="headerlink" title="贝叶斯推断"></a>贝叶斯推断</h3><p>![[Pasted image 20240118124550.png]]</p>
+<h2 id="统计-评估技术"><a href="#统计-评估技术" class="headerlink" title="统计&#x2F;评估技术"></a>统计&#x2F;评估技术</h2><h3 id="Bootstrap、permutation"><a href="#Bootstrap、permutation" class="headerlink" title="Bootstrap、permutation"></a>Bootstrap、permutation</h3><ul>
+<li>Bootstrap<ul>
+<li>从排列的多序列中随机有放回的抽取某一列，构成相同长度的新的排列序列</li>
+<li>重复上面的过程，得到多组新的序列</li>
+<li>对这些新的序列进行建树，再观察这些树与原始树是否有差异，以此评价建树的可靠性</li>
+</ul>
+</li>
+<li>permutation ![[Pasted image 20240118125411.png]]</li>
+</ul>
+<h3 id="TPR、FPR、FDR、Q-value"><a href="#TPR、FPR、FDR、Q-value" class="headerlink" title="TPR、FPR、FDR、Q-value"></a>TPR、FPR、FDR、Q-value</h3><p>![[Pasted image 20240118130041.png]]</p>
+<ul>
+<li>Sensitivity&#x2F;TPR &#x3D; TP &#x2F; (TP + FN)对于“正”样本，被预测成“阳性”的比例是多少</li>
+<li>Specificity&#x2F;TNR &#x3D; TN &#x2F; (TN + FP)对于“负”样本(m0)，被预测成“阴性”的比例是多少</li>
+<li>False positive rate&#x2F;FPR &#x3D; FP &#x2F; (TN + FP)（通常的p-value）对于“负”样本，被预测成“阳性”的比例是多少</li>
+<li>False discovery rate&#x2F;FDR &#x3D; FP &#x2F; (TP + FP)（误报率，大家更关心）预测为“阳性”的样本中，负样本的比例是多少</li>
+<li>如果FDR&lt;α，我们就说这个多重检验的FDR被控制在了α水平<ul>
+<li>FDR&lt;0.05：鉴定的n个显著差异表达基因中包含的错误个数&lt;5%<ul>
+<li>对所有的P 值从小到大排序，记作P_i</li>
+<li>Q-value &#x3D; P(k)*m&#x2F;k</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="QTL和WGAS"><a href="#QTL和WGAS" class="headerlink" title="QTL和WGAS"></a>QTL和WGAS</h2><ul>
+<li>QTL<ul>
+<li>QTL：代表染色体上影响数量性状的某个区段，区段内可能会有一个甚至多个影响数量性状的功能基因</li>
+<li>QTL定位：指检查分子标记与     QTL间的连锁关系，并估算QTL的表型效应；其本质是利用功能基因与分子标记间的连锁与重组，实现对功能基因位置的定位</li>
+<li>分离世代群体建立，遗传标记检测，表型测定，统计分析，候选基因鉴定</li>
+<li>其本质是利用功能基因与分子标记间的连锁与重组，实现对功能基因位置的定位</li>
+<li>定位的统计方法<ul>
+<li>方差分析（F检验）、t检验、线性回归</li>
+<li>线性模型的基础上，利用最大似然法对相邻标记构成的区间内任意一点可能存在的QTL进行似然比检验，进而获得其效应的极大似然估计</li>
+<li>使用逐步回归，将其他与表型关联的QTL作为协变量控制背景遗传效应</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GWAS<ul>
+<li>连接遗传变异 (Genetic Variants, GVs)和表型 (phenotypes)的主要工具。</li>
+<li>标记密度高，理论上可获得群体中所有的变异，并能利用历史上的重组，因而具有较高的定位精度。</li>
+<li>具有丰富的变异，与人工构建的群体变异来源于两个或少数几个亲本相比，自然群体中的变异来自与几百上千乃至数十万的个体。</li>
+<li>快速简便，无需构建群体耗时耗力的过程。<ul>
+<li>自然群体资源的收集和鉴定（纯化）</li>
+<li>获取目标性状的多次表型数据</li>
+<li>表型数据分析（如：BLUP）</li>
+<li>获取基因型数据</li>
+<li>基因型补缺和过滤</li>
+<li>遗传多样性、群体结构、亲缘关系、LD等分析</li>
+<li>关联分析</li>
+<li>候选基因筛选与挖掘</li>
+<li>实验验证、分子机制解析</li>
+</ul>
+</li>
+<li>重组事件的数目</li>
+<li>标记的数目{要比重组事件多才能检测出重组}</li>
+<li>群体大小{群体大了，重组事件多}</li>
+<li>群体结构的影响{群体隔离和受选择都会降低重组率}</li>
+<li>群体的类型{不同的群体，重组率差别很大；是否有杂合基因型也有影响}</li>
+<li>表型的遗传率和测量误差的影响</li>
+<li>模型的选择{线性模型&#x2F;混合模型}</li>
+<li>位点之间是否存在复杂的互作。</li>
+</ul>
+</li>
+</ul>
+<h2 id="线性模型"><a href="#线性模型" class="headerlink" title="线性模型"></a>线性模型</h2><ul>
+<li>线性回归![[Pasted image 20240118132318.png]]<ul>
+<li>参数估计<ul>
+<li>最小误差估计 最小二乘法</li>
+<li>最大似然估计 最大似然估计</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>![[Pasted image 20240118132839.png]]</p>
+<h3 id="差异分析、富集分析"><a href="#差异分析、富集分析" class="headerlink" title="差异分析、富集分析"></a>差异分析、富集分析</h3><ul>
+<li>差异分析<ul>
+<li>基于一些统计学模型，对不同样本处理下的基因表达差异进行分析，区分这种差异来源是源于处理效应，还是随机误差。</li>
+<li>差异表达倍数 (Fold change)<ul>
+<li>Avg(X) &#x2F; Avg(Y)![[Pasted image 20240118133131.png]]</li>
+<li>正态性检验</li>
+<li>威尔克逊秩和检验</li>
+<li>差异表达线性模型</li>
+<li>一般的t-检验</li>
+<li>两组样品比较的方差估计</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>富集分析<ul>
+<li>挖掘在数据库中与我们要研究的生物学问题具有显著相关性的基因功能类别<ul>
+<li>过表达分析（检验差异表达基因是否与某个类别或者途径相关）</li>
+<li>功能集打分</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据处理通用算法"><a href="#数据处理通用算法" class="headerlink" title="数据处理通用算法"></a>数据处理通用算法</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h3><ul>
+<li>缺失值估计<ul>
+<li>找到在所有样品中与基因G的表达量最相关的J个基因</li>
+<li>根据J个基因的表达量计算样品间距离，找到与样品A距离最小（最相似）、且基因G表达量有值的k个样品</li>
+<li>计算k个样品中基因G的平均表达量，填补缺失值</li>
+</ul>
+</li>
+</ul>
+<h3 id="UPGMA"><a href="#UPGMA" class="headerlink" title="UPGMA"></a>UPGMA</h3><ul>
+<li>将序列相似性最高（距离最近）的两条序列合并成一个分支，再计算新合并的分支与其它序列的平均距离；再按距离最近的两条序列（或合并分支）进行合并，直到所有序列都完成合并，最后获得有根树</li>
+</ul>
+<h3 id="其他聚类"><a href="#其他聚类" class="headerlink" title="其他聚类"></a>其他聚类</h3><ul>
+<li>层次聚类<ul>
+<li>计算该节点到其他所有节点的距离<ul>
+<li>Furthest-Neighbour：max</li>
+<li>Nearest-Neighbour：min</li>
+<li>UPGMA：avg</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>K-means（k&#x3D;7或者层次聚类)<ul>
+<li>随机找k个质心</li>
+<li>进行分类</li>
+<li>重复上述步骤直到稳定</li>
+</ul>
+</li>
+<li>K-mediod<ul>
+<li>从散点图中选择k个数据点作为聚类中心的起点。</li>
+<li>计算它们与散点图中所有点的距离，将每个点分类到最接近中心的聚类中。</li>
+<li>在每个群集中选择一个新点，以使该群集中所有点与新点的距离之和最小。</li>
+</ul>
+</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="median-polish"><a href="#median-polish" class="headerlink" title="median polish"></a>median polish</h3><ul>
+<li>每个芯片归一化到它的中位数</li>
+<li>每个基因归一化到它的中位数</li>
+<li>重复，直到中位数收敛</li>
+<li>最多5次迭代，以防止无限循环。</li>
+</ul>
+<h3 id="Quantile-normalization"><a href="#Quantile-normalization" class="headerlink" title="Quantile normalization"></a>Quantile normalization</h3><ul>
+<li>对所有芯片的数据进行均一化，使其分布相同<ul>
+<li>根据列排序；</li>
+<li>计算每行的平均数；</li>
+<li>按照原来列的排序重新排列。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Moderated-t-test-Pasted-image-20240118140230-png"><a href="#Moderated-t-test-Pasted-image-20240118140230-png" class="headerlink" title="Moderated t-test![[Pasted image 20240118140230.png]]"></a>Moderated t-test![[Pasted image 20240118140230.png]]</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E6%80%BB%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%8E%9F%E7%90%86/" data-id="clvj9cw5n000nqkhtazb4fu6y" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/基因表达谱分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E8%B0%B1%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.009Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基因芯片"><a href="#基因芯片" class="headerlink" title="基因芯片"></a>基因芯片</h2><ul>
+<li>转录组<ul>
+<li>一个活细胞所能转录出来的所有RNA的总和</li>
+<li>是解析生物学机制和基因功能的重要途径</li>
+</ul>
+</li>
+<li>概念<ul>
+<li>固定着大规模的DNA片段，用于检测整个转录组内成千上万个基因的mRNA表达水平的变化的微型器材</li>
+</ul>
+</li>
+<li>流程<ul>
+<li>提取RNA</li>
+<li>反转录</li>
+<li>扩增</li>
+<li>标记</li>
+<li>杂交</li>
+<li>扫描</li>
+<li>获得原始数据</li>
+</ul>
+</li>
+<li>优势<ul>
+<li>稳定可靠</li>
+<li>积累了大量不可重新获取的数据</li>
+</ul>
+</li>
+<li>局限<ul>
+<li>智能检测已知或确定性的序列</li>
+<li>无法检测新发现、未放置到芯片上的基因</li>
+<li>有部分探针的信号可能会收到非特异性杂交及个体序列差异的影响</li>
+</ul>
+</li>
+</ul>
+<h2 id="表达谱数据库介绍"><a href="#表达谱数据库介绍" class="headerlink" title="表达谱数据库介绍"></a>表达谱数据库介绍</h2><ul>
+<li>GEO数据库<ul>
+<li>包含提交到NCBI的各种物种的基因表达谱数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="芯片数据前处理"><a href="#芯片数据前处理" class="headerlink" title="芯片数据前处理"></a>芯片数据前处理</h2><ul>
+<li>数据过滤</li>
+<li>背景纠正<ul>
+<li>从总体信号中减去噪声信号，从而得到真实信号</li>
+<li>PM和MM组成一组探针，MM是检测非特异杂交信号，应该比PM小，但实际上33%的MM&gt;PM</li>
+</ul>
+</li>
+<li>均一化<ul>
+<li>几乎所有高通量技术都涉及该数据处理过程</li>
+<li>M-A plot![[Pasted image 20240115160429.png]]</li>
+<li>median normalization(中位数均一化)</li>
+<li>Loess normalization(成对样本均一化)</li>
+<li>quantile normalization(分位数均一化)<ul>
+<li>根据列排序</li>
+<li>计算每行平均值</li>
+<li>按照原来列的排序重新排序![[Pasted image 20240115154554.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>探针集信号汇总![[Pasted image 20240115154925.png]]<ul>
+<li>Average Difference method(MAS 4.0)<ul>
+<li>30%-40%探针过滤，可能产生负值</li>
+</ul>
+</li>
+<li>MAS 5.0</li>
+<li>Li&amp;Wong(dChip)</li>
+<li>RMA<ul>
+<li>Use Median Polishing</li>
+<li>每行减去行中位数</li>
+<li>每列减去列中位数</li>
+<li>直到行列中位数都为0</li>
+<li>用原始矩阵减现在的矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>补缺失值</li>
+<li>批次效应</li>
+</ul>
+<h2 id="基因表达谱差异表达分析"><a href="#基因表达谱差异表达分析" class="headerlink" title="基因表达谱差异表达分析"></a>基因表达谱差异表达分析</h2><ul>
+<li>基于一些统计学模型，对不同样本处理下的基因表达差异进行分析</li>
+<li>要先对样本进行相关性分析或者主成分分析</li>
+<li>差异表达倍数（Fold change）$$\frac{AVG(X)}{AVG(Y)}$$![[Pasted image 20240115161019.png]]</li>
+<li>衡量置信度<ul>
+<li>正态性检验Test Normality<ul>
+<li>t-test</li>
+<li>非参数检验non-parametric test</li>
+</ul>
+</li>
+<li>威尔克逊秩和检验Wilcoxon Rank Sum</li>
+<li>差异表达线性模型Linear Model![[Pasted image 20240115161553.png]]</li>
+<li>一般的t检验Ordinary t-tests</li>
+<li>两样本比较的方差估计Variance Estimates</li>
+</ul>
+</li>
+<li>p-value![[Pasted image 20240115161816.png]]</li>
+<li>多重假设检验Multiple Hypothesis Testing<ul>
+<li>p值只对一次实验有效</li>
+<li>组错误率FWER，在一系列实验中至少犯一次错的概率![[Pasted image 20240115162232.png]]<ul>
+<li>往往会过于严苛</li>
+</ul>
+</li>
+<li>TPR(sensitivity)&#x3D;TP&#x2F;(TP+TN)</li>
+<li>TNP(specificity)&#x3D;TN&#x2F;(TN+FP)</li>
+<li>FPR&#x3D;FP&#x2F;(TN+FP)[P-value]</li>
+<li>FDR&#x3D;FP&#x2F;(TP+FP)[往往大家更关心]<ul>
+<li>鉴定n个显著差异表达基因中包含错误个数&lt;5%![[Pasted image 20240115162722.png]]</li>
+<li>Q-value&#x3D;p(k)*m&#x2F;k</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基因本体论及富集分析"><a href="#基因本体论及富集分析" class="headerlink" title="基因本体论及富集分析"></a>基因本体论及富集分析</h2><ul>
+<li>基因本体论GO<ul>
+<li>GO注释：用标准化的术语来全面描述基因及其产物的功能和属性<ul>
+<li>细胞组分CC</li>
+<li>分子功能MF</li>
+<li>生物过程BP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>富集分析<ul>
+<li>关注一组基因</li>
+<li>挖掘在数据库中我们要研究的生物学问题具有显著相关性的基因功能类别</li>
+<li>过表达分析（ORA）![[Pasted image 20240115170449.png]]检验差异表达基因是否与某个类别或者途径相关</li>
+<li>功能集打分<ul>
+<li>根据各基因在不同处理中表达差异的大小将基因排序</li>
+<li>计算基因集富集分数（ES）![[Pasted image 20240116001538.png]]</li>
+<li>通过随机模拟背景分布估计富集的显著度</li>
+<li>使用多重假设</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E8%B0%B1%E5%88%86%E6%9E%90/" data-id="clvj9cw5m000lqkht2hkbeitw" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/多序列比对(MSA)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%A4%9A%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9(MSA)/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.009Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>设$k$个序列$s_1,s_{2},s_{3}\dots\dots s_{k}$,，每个序列由同一个字母表中的字符组成</li>
+</ul>
+<h2 id="为什么要做MSA"><a href="#为什么要做MSA" class="headerlink" title="为什么要做MSA"></a>为什么要做MSA</h2><ul>
+<li>用于描述一组序列之间的相似性关系，以了解一个基因家族的基本特征，寻找motif，保守区域等，用于预测新序列的二级，三级结构</li>
+<li>用于描述同源序列之间的亲缘关系的远近，应用到分子进化分析中，是分子进化树的基础<ul>
+<li>Paralogy旁系同源<ul>
+<li>基因组内基因复制产生，易发生功能分化</li>
+</ul>
+</li>
+<li>Orthology直系同源<ul>
+<li>物种形成过程中源自同一祖先，通常功能保守</li>
+</ul>
+</li>
+<li>![[Pasted image 20231227121431.png]]</li>
+</ul>
+</li>
+<li>不同物种基因组范围的MSA能分析基因组结构变异</li>
+<li>![[Pasted image 20231227121523.png]]</li>
+</ul>
+<h2 id="怎么做MSA"><a href="#怎么做MSA" class="headerlink" title="怎么做MSA"></a>怎么做MSA</h2><h4 id="如何评估"><a href="#如何评估" class="headerlink" title="如何评估"></a>如何评估</h4><ul>
+<li>按照每个比对的列进行打分，然后加和</li>
+<li>每一列<ul>
+<li>k个变量的打分函数</li>
+<li>用一个k维数组来表示该显式函数</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>逐对加和SP函数<br>$$SP - score(c_{1},c_{2},\dots,c_{k})&#x3D;\sum\limits_{i&#x3D;1}^{k-1}\sum\limits_{j&#x3D;i+1}^{k}p(c_{i},c_{j})$$</p>
+<blockquote>
+<p>$c_{1},c_{2},\dots,c_{3}$是一列中的k个字符，p是关于一对字符相似性的打分函数<br>例：</p>
+<blockquote>
+<p>序列：L L A P G S - G<br>$$-C_{8}^2+2&#x3D;-26$$</p>
+<blockquote>
+<p>其中LL相配，GG相配，加二分<br>规则：相同0分，不同-1分<br>$补充：p(-,-)&#x3D;0$</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="多序列比对算法"><a href="#多序列比对算法" class="headerlink" title="多序列比对算法"></a>多序列比对算法</h4><ul>
+<li>动态规划算法（精确）<ul>
+<li>通过处理得到一个得分最高的序列比对排列</li>
+<li>使用晶格</li>
+<li>![[Pasted image 20231227123340.png]]</li>
+<li>问题<ul>
+<li>计算量极其巨大</li>
+<li>时间复杂度$O(2^kN^k)$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多序列比对优化算法"><a href="#多序列比对优化算法" class="headerlink" title="多序列比对优化算法"></a>多序列比对优化算法</h4><ul>
+<li>针对搜索空间大<ul>
+<li>剪枝技术：将搜索空间限定在一个较小的区域的范围内。<ul>
+<li>若搜索时当前路径得分低于某个下限，则对当前路径剪枝</li>
+</ul>
+</li>
+<li>Carrillo-Lipman方法<ul>
+<li>先进行双序列比对，限制进一步搜索的多维空间，减少计算量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多序列比对近似算法"><a href="#多序列比对近似算法" class="headerlink" title="多序列比对近似算法"></a>多序列比对近似算法</h4><ul>
+<li>启发式算法：多数情况下，计算结果接近最优结果</li>
+<li>渐进法：将序列多重比对转化为亮亮比对，逐渐将两两比对结合起来，形成完整的多系列比对。</li>
+<li>星形比对（近似）<ul>
+<li>给定序列中选择一个核心序列，通过该序列与其他序列两两比对形成所有序列的多重比对<ul>
+<li>$O(kn^2)$</li>
+<li>采用只要是空白，则永远是空白的原则</li>
+<li>逐步增加Sc中的空位字符并且绝不删除</li>
+</ul>
+</li>
+<li>选取核心序列<ul>
+<li>每个都做比对，取最好的</li>
+<li>计算所有的两两比对，取$$\sum sim(s_{i},s_{c})$$</li>
+<li>![[Pasted image 20231227131454.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>树形比对<ul>
+<li>k个待比对序列-k个叶节点的树</li>
+<li>可以计算权值，代表对应分支连接的两个序列的相似性，权值的和就是这棵树的得分</li>
+<li>过程<ul>
+<li>初始化，对于每个序列，生成一个叶节点</li>
+<li>利用AA算法算法合并两个节点为新节点</li>
+<li>直到结束</li>
+</ul>
+</li>
+<li>AA算法<ul>
+<li>两个多重比对序列$\alpha_{1},\alpha_{2}$,其中$\alpha$代表s1和t1的两两比对</li>
+<li>标定$\alpha_{1}$的各列，如果s1在比对中对应位置的编辑操作不是插入或者删除，则标记这列</li>
+<li>对标记的两列进行比对</li>
+<li>对原来的进行恢复</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启发式算法（近似）<ul>
+<li>渐进式比对<ul>
+<li>将多序列比对转化为两两比对，逐渐将两两比对结合起来，形成完整的多序列比对</li>
+<li>现将多个序列进行两两比对，给予这个比较，计算得到一个距离矩阵，该矩阵反应每对序列的关系</li>
+<li>利用距离矩阵建立一个相关树</li>
+<li>从最近的一对开始，逐步归并形成聚类</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多序列比对软件"><a href="#多序列比对软件" class="headerlink" title="多序列比对软件"></a>多序列比对软件</h2><ul>
+<li>ClustalW算法<ul>
+<li>两两比对构建距离矩阵</li>
+<li>构建指导树</li>
+<li>将距离最近的两条序列用动态规划的算法进行比较</li>
+<li>软件：Clustal X</li>
+</ul>
+</li>
+<li>T-Coffee算法<ul>
+<li>整合全局比对和局部比对</li>
+<li>渐进式多序列比对取的最优方法<ul>
+<li>根据序列比对相似性，定义每一对比对上碱基或氨基酸的比对权重</li>
+<li>根据序列比对相似性，定义每一对比对上碱基或氨基酸的比对权重，构建初始比对库</li>
+<li>合并全局比对与局部比对的权重库</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MuSCLE算法<ul>
+<li>初始渐进比对<ul>
+<li>对两条序列，计算距离采用K-mar的思想</li>
+<li>使用UPGMA法构建引导树</li>
+<li>使用渐进法进行多序列比对</li>
+</ul>
+</li>
+<li>优化渐进比对improved progressive<ul>
+<li>给予K-mer得到的树，可能是次优结果。采用给予Kimura距离的方法，重新建树</li>
+<li>使用UPGMA法构建引导树</li>
+<li>使用渐进法进行多序列比对</li>
+</ul>
+</li>
+<li>比对再优化<ul>
+<li>从进化树上挑出一个边，删除</li>
+<li>删除之后，得到两个子树，对每组子树，计算profile</li>
+<li>将两组proflie比对，重新获得多序列比对</li>
+<li>如果该比对的得分较高，则保留该结果，否则丢弃</li>
+<li>重复1-4步，知道收敛或者达到用户指定的重复次数asdfghawdawd</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>局部比对<ul>
+<li>最大期望法</li>
+<li>吉布斯抽样</li>
+<li>隐马尔科夫模型</li>
+</ul>
+</li>
+<li><h2 id="特征序列分析-保守序列（motif）-表示序列每个位置上最有可能出现的字符-统计特征图（profile-提供了多序列比对中每一列出现各种氨基酸-碱基的概率-令-P-P-1-P-2-dots-P-L-P-表示在-alpha-的每一列上各种字符出现的概率分布-P-j-p-j0-p-j1-dots-p-j-a-A代表字母表-P-jk-代表字母表A中第k个字符在第j列出现的频率-第0个字符是特殊的空位符号‘-’-利用上述两种方法可以判断一个序列是否满足一定的特征-给定一个序列-s-a-1-a-2-dots-a-m-，定义字符a在第j位的代价为-w-a-j-sum-limits-k-0-A-w-a-A-k-P-jk-A-代表字母表A的长度-A-k-代表A的第k个字符-A-0-代表空缺字符‘-’-整个序列的代价-w-s-alpha-sum-limits-j-w-a-j-一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应-Pasted-image-20231228125646-png-sequence-logo-描述功能域等保守性的可视化方式-Pasted-image-20231228125754-png"><a href="#特征序列分析-保守序列（motif）-表示序列每个位置上最有可能出现的字符-统计特征图（profile-提供了多序列比对中每一列出现各种氨基酸-碱基的概率-令-P-P-1-P-2-dots-P-L-P-表示在-alpha-的每一列上各种字符出现的概率分布-P-j-p-j0-p-j1-dots-p-j-a-A代表字母表-P-jk-代表字母表A中第k个字符在第j列出现的频率-第0个字符是特殊的空位符号‘-’-利用上述两种方法可以判断一个序列是否满足一定的特征-给定一个序列-s-a-1-a-2-dots-a-m-，定义字符a在第j位的代价为-w-a-j-sum-limits-k-0-A-w-a-A-k-P-jk-A-代表字母表A的长度-A-k-代表A的第k个字符-A-0-代表空缺字符‘-’-整个序列的代价-w-s-alpha-sum-limits-j-w-a-j-一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应-Pasted-image-20231228125646-png-sequence-logo-描述功能域等保守性的可视化方式-Pasted-image-20231228125754-png" class="headerlink" title="特征序列分析  - 保守序列（motif）      - 表示序列每个位置上最有可能出现的字符  - 统计特征图（profile)      - 提供了多序列比对中每一列出现各种氨基酸&#x2F;碱基的概率      - 令$P&#x3D;(P_{1},P_{2},\dots,P_{L})$,$P$表示在$\alpha$的每一列上各种字符出现的概率分布$$P_{j}&#x3D;(p_{j0},p_{j1},\dots,p_{j|a |})$$          - A代表字母表          - $P_{jk}$代表字母表A中第k个字符在第j列出现的频率          - 第0个字符是特殊的空位符号‘-’  - 利用上述两种方法可以判断一个序列是否满足一定的特征      - 给定一个序列$s&#x3D;a_{1}a_{2}\dots a_{m}$，定义字符a在第j位的代价为$$w^{}(a,j)=\sum\limits_{k=0}^{|A|}w(a,A_{k})P_{jk}$$           - |A|代表字母表A的长度           - $A_{k}$代表A的第k个字符           - $A_{0}$代表空缺字符‘-’       - 整个序列的代价$$w^*(s,\alpha)=\sum\limits_{j}w^(a,j)$$      - 一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应  - ![[Pasted image 20231228125646.png]]  - sequence logo:描述功能域等保守性的可视化方式![[Pasted image 20231228125754.png]]"></a>特征序列分析<br>  - 保守序列（motif）<br>      - 表示序列每个位置上最有可能出现的字符<br>  - 统计特征图（profile)<br>      - 提供了多序列比对中每一列出现各种氨基酸&#x2F;碱基的概率<br>      - 令$P&#x3D;(P_{1},P_{2},\dots,P_{L})$,$P$表示在$\alpha$的每一列上各种字符出现的概率分布$$P_{j}&#x3D;(p_{j0},p_{j1},\dots,p_{j|a |})$$<br>          - A代表字母表<br>          - $P_{jk}$代表字母表A中第k个字符在第j列出现的频率<br>          - 第0个字符是特殊的空位符号‘-’<br>  - 利用上述两种方法可以判断一个序列是否满足一定的特征<br>      - 给定一个序列$s&#x3D;a_{1}a_{2}\dots a_{m}$，定义字符a在第j位的代价为$$w^{<code>&#125;(a,j)=\sum\limits_&#123;k=0&#125;^&#123;|A|&#125;w(a,A_&#123;k&#125;)P_&#123;jk&#125;$$           - |A|代表字母表A的长度           - $A_&#123;k&#125;$代表A的第k个字符           - $A_&#123;0&#125;$代表空缺字符‘-’       - 整个序列的代价$$w^*(s,\alpha)=\sum\limits_&#123;j&#125;w^</code>(a,j)$$<br>      - 一条序列的特征统计图相对照，如果代价值小，说明该序列具有相应的特征，否则该序列不具备相应<br>  - ![[Pasted image 20231228125646.png]]<br>  - sequence logo:描述功能域等保守性的可视化方式![[Pasted image 20231228125754.png]]</h2></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%A4%9A%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9(MSA)/" data-id="clvj9cw5n000mqkhtdjwz6aoc" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/基因组组装与其他序列对比算法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%84%E8%A3%85%E4%B8%8E%E5%85%B6%E4%BB%96%E5%BA%8F%E5%88%97%E5%AF%B9%E6%AF%94%E7%AE%97%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.008Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="序列拼接的基本原理"><a href="#序列拼接的基本原理" class="headerlink" title="序列拼接的基本原理"></a>序列拼接的基本原理</h1><h2 id="序列拼接"><a href="#序列拼接" class="headerlink" title="序列拼接"></a>序列拼接</h2><ul>
+<li>片段组装问题<ul>
+<li>给定一组取自特定字母表的字符串集合F，寻找一个最短的字符串s，使得F中的每一个字符串都是s的一个连续子串。![[Pasted image 20231228162058.png]]</li>
+<li>主要问题：<ul>
+<li>碱基错误</li>
+<li>不知道片段方向</li>
+<li>存在重复区域</li>
+<li>缺少覆盖</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>序列片段组装模型<ul>
+<li>步骤<ul>
+<li><ol>
+<li>首先进行序列片段的两两比较，确定可能的片段之间的覆盖</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>确定所有片段统一的覆盖模式，即确定各个序列片段的相对位置</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>最后确定片段组装结果，即确定目标序列</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>最短公共超串模型<ul>
+<li>给定一个字符串集合F，求出一个最短的字符串S，使得对于所有属于F的字符串f，S是f的超串。</li>
+</ul>
+</li>
+<li>重建模型<ul>
+<li>考虑到片段的误差和未知方向的问题</li>
+<li>假设f、g代表两条序列，f作为g近似子串的代价$$d_{s}(f,g)&#x3D;{mind(f,s)}_{s\in S(g)}$$<ul>
+<li>S(g)代表所有子串的集合</li>
+<li>d为编辑距离<ul>
+<li>匹配为0</li>
+<li>其他为1</li>
+</ul>
+</li>
+<li>主要思想<ul>
+<li>寻找一个尽可能短的字符串S，使每一个f或其反向互补串成为S的近似子串</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>多重连续区模型<ul>
+<li>如果一组序列片段最弱连接的交叠长度至少为t，称这组片段的多重序列比对是t-contig。</li>
+<li>给定一个片段集合和一个整数t，将F分割为最小数目的子集$C_{i}$每个$C_{i}$允许一个t-config</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>片段序列覆盖图<ul>
+<li>多图：两个顶点之间可能存在多条边的图</li>
+<li>覆盖多图：<ul>
+<li>F是一个有向图，每个顶点代表一个字符串</li>
+<li>如果f的t个字符的后缀与g的t个字符的前缀相同，则图中存在一条权值为t的有向边![[Pasted image 20240102185458.png]]</li>
+</ul>
+</li>
+<li>求最短的公共超串等价于取权值最大的哈密顿路径<ul>
+<li>哈密顿路径：在一个图中沿边访问每个顶点恰好一次的路径</li>
+</ul>
+</li>
+<li>一般步骤![[Pasted image 20240102185710.png]]<ul>
+<li>贪婪算法<br>  ![[Pasted image 20240118204932.png]]![[Pasted image 20240118204921.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基因组组装"><a href="#基因组组装" class="headerlink" title="基因组组装"></a>基因组组装</h2><ul>
+<li>基因组复杂度及其评估<ul>
+<li>认识基因组</li>
+<li>主要评估指标<ul>
+<li>基因组大小</li>
+<li>重复序列比例</li>
+<li>基因组杂合度</li>
+<li>染色体型和倍性</li>
+</ul>
+</li>
+<li>基于二代测序数据的基因组复杂度估计<ul>
+<li>kmer分析<ul>
+<li>kmers深度：L-K+1<ul>
+<li>L：序列总长度</li>
+<li>K：kmer长度</li>
+</ul>
+</li>
+<li>通过kmers深度的分布规律来估计基因组的一些基本信息。如基因组大小、杂合度、重复序列比例等</li>
+</ul>
+</li>
+<li>估计基因组大小（）<ul>
+<li>G大小的基因组有N段，长度为L</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基因组组装<ul>
+<li>主要挑战<ul>
+<li>测序错误</li>
+<li>重复序列</li>
+<li>单倍型差异</li>
+<li>超大基因组</li>
+</ul>
+</li>
+<li>主要流程<ul>
+<li>评估基因组复杂度，确定测序方案 kmer</li>
+<li>从头组装得到contig序列 OLC和DBG</li>
+<li>连接config，得到scaffold</li>
+<li>挂载染色体序列 HiFi</li>
+<li>评估基因组组装质量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="确定测序方案"><a href="#确定测序方案" class="headerlink" title="确定测序方案"></a>确定测序方案</h3><ul>
+<li>鸟枪法的测序策略<ul>
+<li>逐步克隆法![[Pasted image 20240102195706.png]]<ul>
+<li>构建文库繁琐、费时费力，成本非常高</li>
+<li>对组装算法要求低</li>
+</ul>
+</li>
+<li>全基因组鸟枪法![[Pasted image 20240102195730.png]]</li>
+</ul>
+</li>
+<li>待测基因组复杂度评估</li>
+<li>测序技术（1,2,3代）<ul>
+<li>基因组复杂度</li>
+<li>测序成本</li>
+<li>样品与测序文库制备的难易度</li>
+</ul>
+</li>
+<li>测序文库片段的大小数量</li>
+<li>测序深度<ul>
+<li>测序平均深度——基因组平均每个点位上被测序的次数</li>
+</ul>
+</li>
+</ul>
+<h3 id="确定组装方案"><a href="#确定组装方案" class="headerlink" title="确定组装方案"></a>确定组装方案</h3><ul>
+<li>从头组装算法 ![[Pasted image 20240102201112.png]]</li>
+<li>![[Pasted image 20240113135941.png]]<ul>
+<li>DBG算法（二代测序算法）<ul>
+<li>哈尼尔顿回路（从某个起点开始，经过每个顶点一次且仅一次 ，回到起点）</li>
+<li>欧拉回路（从某个起点开始，经过每条边一次且仅一次，回到起点）【容易】</li>
+<li>在de Bruijn图中寻找一条欧拉超路能遍历所有的读段对应的路径</li>
+<li>德布鲁因序列B(k,n)，是k个元素构成的循环序列。所有长度为n的k元素构成序列都在它的子序列中，出现并且仅出现一次</li>
+<li>可以通过确定n维德布鲁因图的汉密尔顿路径<ul>
+<li>构造de Bruijn图，每一个节点赋值3-mer</li>
+<li>连接节点，边的取值为4-mer，它的前缀和后缀分别代表了两个节点的3-mer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>OLC算法<ul>
+<li>Sanger算法<ul>
+<li>找出序列间的重叠区域</li>
+<li>基于重叠区域，拼接出序列片段</li>
+<li>基于序列片段关系进行连接，经错误纠正，获得最终序列</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>scaffolding<ul>
+<li>按照一定的顺序和方向，将基因组上物理位置相邻的contig序列，连接成scaffold序列</li>
+<li>Contig&#x2F;Scaffold N50&#x2F;L50 将组装获得的contig&#x2F;scaffold 序列按长度从大到小依次累加，当累计长度超过contig&#x2F;scaffold总长度的50%时，此刻对应的那个contig&#x2F;scaffold的长度即为N50值，此时被累加的contig&#x2F;scaffold数目即为L50值。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%84%E8%A3%85%E4%B8%8E%E5%85%B6%E4%BB%96%E5%BA%8F%E5%88%97%E5%AF%B9%E6%AF%94%E7%AE%97%E6%B3%95/" data-id="clvj9cw5m000kqkht6w98hgxq" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/基因定位和全基因组关联分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%85%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.007Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="质量性状的概念及遗传特点"><a href="#质量性状的概念及遗传特点" class="headerlink" title="质量性状的概念及遗传特点"></a>质量性状的概念及遗传特点</h2><ul>
+<li>在一个群体内表现不连续变异的形状，相对性状间有质的差异<ul>
+<li>表现型和基因型的变异不连续</li>
+<li>相对性状之间存在显隐性</li>
+<li>不易受环境条件的影响而发生变异</li>
+<li>眼睛观察，文字记载描述，符合孟德尔定律</li>
+</ul>
+</li>
+</ul>
+<h2 id="数量性状的概念及遗传特点"><a href="#数量性状的概念及遗传特点" class="headerlink" title="数量性状的概念及遗传特点"></a>数量性状的概念及遗传特点</h2><ul>
+<li>在一个群体内表现为连续变异的性状，相对性状间没有质的差异<ul>
+<li>不存在显性与隐性的关系</li>
+<li>对环境条件反应敏感</li>
+<li>依靠群体，使用统计方法</li>
+</ul>
+</li>
+<li>受主效基因转换</li>
+<li>阈性性状</li>
+</ul>
+<h2 id="纯系学说"><a href="#纯系学说" class="headerlink" title="纯系学说"></a>纯系学说</h2><ul>
+<li>内容<ul>
+<li>一个基因型纯合个体自交产生的后代，其后代群体的基因型也是纯合的</li>
+</ul>
+</li>
+</ul>
+<h2 id="分子标记"><a href="#分子标记" class="headerlink" title="分子标记"></a>分子标记</h2><p>是以个体间遗传物质的核苷酸序列变异为基础的遗传标记</p>
+<ul>
+<li>第一代分子标记<ul>
+<li>DNA限制片段长度多态性RFLP<ul>
+<li>以Southern杂交为核心，由限制性内切酶识别序列发生变异，导致酶切位点数量发生变化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>第二代分子标记<ul>
+<li>DNA随机扩增多态性RAPD<ul>
+<li>利用随机引物对目的基因组DNA进行PCR扩增，产物经电泳分离后显色，分析扩增产物DNA片段的多态性</li>
+</ul>
+</li>
+<li>简单重复序列SSR<ul>
+<li>以1-6个碱基为重复单元的串联重复序列的长度变异而产生的多态性</li>
+</ul>
+</li>
+<li>扩增片段长度多态性AFLP<ul>
+<li>基于PCR反应的一种选择性扩增限制性片段的方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>第三代分子标记<ul>
+<li>单核苷酸多态性SNPs<ul>
+<li>在基因组水平上由单个核苷酸的变异所引起的DAN序列多态性</li>
+</ul>
+</li>
+<li>SNP标记检测方法<ul>
+<li>是一种DNA芯片，通过杂交的方法检测个体间已知多态性位点的基因型</li>
+<li>竞争性等位基因特异性PCR KASP<ul>
+<li>基于引物末端碱基的特异匹配来对SNP进行分型，用于检测大量样本的少量标记</li>
+<li>基因组重测序</li>
+<li>转录组测序</li>
+<li>GBS<ul>
+<li>检测酶切位点附近的序列、</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="QTL定位原理"><a href="#QTL定位原理" class="headerlink" title="QTL定位原理"></a>QTL定位原理</h2><ul>
+<li>QTL：代表染色体上影响数量性状的某个区段，区段内可能会有一个甚至多个影响数量性状的功能基因</li>
+<li>QTL定位：检查分子标记与QTL间的连锁关系，并估算QTL的表型效应。<ul>
+<li>实现对功能基因的定位</li>
+</ul>
+</li>
+<li>构建合适的作图群体<ul>
+<li>亲本的选择</li>
+<li>群体大小</li>
+<li>分离群体的类型</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%9F%BA%E5%9B%A0%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%85%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/" data-id="clvj9cw5m000jqkht48br41nm" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-note/大三上/生物信息学原理/两序列比对" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E4%B8%A4%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T08:12:22.004Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>![[Pasted image 20231221152517.png]]</p>
+<h2 id="序列比对简介"><a href="#序列比对简介" class="headerlink" title="序列比对简介"></a>序列比对简介</h2><ul>
+<li>序列比对：根据特定的计分规则，通过一定的算法对两条或多条DNA或蛋白质序列进行比较，找出他们之间的最优匹配或最大相似度匹配<ul>
+<li>根本任务<ul>
+<li>发现序列之间的相似性</li>
+<li>辨别序列之间的差异</li>
+</ul>
+</li>
+<li>目的<ul>
+<li>相似序列 -&gt; 相似结构 -&gt; 相似功能</li>
+<li>判别同源性</li>
+<li>推测序列之间的进化关系</li>
+<li>寻找遗传变异</li>
+</ul>
+</li>
+<li>核心问题<ul>
+<li>用于评估序列比对的评分系统</li>
+<li>用来寻找最佳比对的算法</li>
+<li>用来评估对比得分显著性的统计方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="序列比对的计分规则"><a href="#序列比对的计分规则" class="headerlink" title="序列比对的计分规则"></a>序列比对的计分规则</h2><ul>
+<li>最优匹配<ul>
+<li>在给定计分规则下，打分最高或罚分最低的比对形式</li>
+<li>匹配 0</li>
+<li>错配 -1</li>
+<li>空位 -1</li>
+</ul>
+</li>
+<li>记分矩阵<ul>
+<li>序列比对过程中使用的计分规则，是序列比对的重要组成部分，他给出序列比对中碱基或氨基酸匹配或错配值，故又称替换矩阵<ul>
+<li>生物学关系最显著的对比形式的统计值最大</li>
+<li>长度一定时，分数越高，两条序列匹配越好</li>
+</ul>
+</li>
+<li>DNA替换矩阵<ul>
+<li>DNA替换矩阵相对简单</li>
+<li>PAM1&#x3D;每个位置有1%的突变概率![[Pasted image 20231220124010 1.png]]</li>
+<li>考虑转换(Transitions)比颠换(Transversions)更频繁![[Pasted image 20231220124231.png]]<ul>
+<li>核苷酸的碱基按照环结构特征被划分为两类，一类是嘌呤，包括腺嘌呤A和鸟嘌呤G（两个环）；另一类是嘧啶，包括胞嘧啶C和胸腺嘧啶T（一个环）。如果DNA 碱基的替换保持环数不变，则称为转换，比如腺嘌呤A 替换为鸟嘌呤G、或者胞嘧啶C替换为胸腺嘧啶T，也就是嘌呤变嘌呤，嘧啶变嘧啶；如果环数发生变化，则称为颠换，比如腺嘌呤A 替换为胞嘧啶C、或者胸腺嘧啶T 替换为鸟嘌呤G，也就是嘌呤变嘧啶，或者嘧啶变嘌呤。在进化过程中，转换发生的频率远比颠换高。也就是说，大自然更倾向于接受嘌呤和嘌呤之间的替换，以及嘧啶和嘧啶之间的替换，而嘌呤和嘧啶之间的替换会导致不好的事情发生，这种替换大多在进化过程中已经被淘汰了。</li>
+</ul>
+</li>
+<li>如果一个替换的概率是2%，只需要将1%的概率乘以自己【矩阵乘法】</li>
+<li>PAM N矩阵式通过PAM 1自乘N次</li>
+</ul>
+</li>
+<li>氨基酸替换矩阵<ul>
+<li>氨基酸替换矩阵相对复杂<ul>
+<li>不同错配的打分处理</li>
+<li>一致氨基酸的计分不同</li>
+<li>稀有氨基酸分高，普通氨基酸分低</li>
+<li>结构或性质相似的氨基酸之间的替换很常见</li>
+<li>不同蛋白质接祖和预期的相似度构建不同的替换矩阵</li>
+</ul>
+</li>
+<li>Dayhoff矩阵<ul>
+<li>基于蛋白质进化模式的研究</li>
+<li>71组蛋白质，&gt;85%序列一致性，1572次氨基酸替换事件![[Pasted image 20231220125147 1.png]]</li>
+<li>![[Pasted image 20231220125257.png]]</li>
+<li>![[Pasted image 20231220125302.png]]<ul>
+<li>1 PAM相当于所有氨基酸平均有1%发生了变化</li>
+<li>经过PAM 100次的进化，并非每个氨基酸发生了变化</li>
+<li>利用大于100PAM的时间间隔可能区分进化关系较远的同源蛋白质序列</li>
+<li>PAM后面的数字，表示一种进化距离，数字越大，进化距离越远</li>
+<li>PAM250是早期研究中应用最广的替换矩阵</li>
+<li>JTT矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>BLOSUM替换矩阵<ul>
+<li>蛋白质序列高度保守区（BLOCKS）用于构建BLOSUM矩阵<ul>
+<li>优点：符合实际观测结果</li>
+<li>不足：不于进化关系挂钩</li>
+</ul>
+</li>
+<li>假设$f_{ij}$为序列比对中氨基酸i和j对，则i和j对氨基酸所占比例$$q_{ij}&#x3D;\dfrac{f_{ij}}{\sum\limits_{i&#x3D;1}^{20}\sum\limits_{j&#x3D;1}^{i}f_{ij}}$$</li>
+<li>在完全独立的情况下，该比例的期望值为<br>  $$<br>  e_{ij}&#x3D;\left{<br>  \begin{aligned}<br>  p_i^2 \quad i&#x3D;j \<br>  2p_ip_j \quad i\neq j \<br>  \end{aligned}<br>  \right<br>  .<br>  $$</li>
+<li>其中$p_i$和$p_j$序列分别为第i和第j个那计算所占比例<br>  $$<br>  p_i&#x3D;q_i+\sum\limits_{j\neq i} q_{ij}&#x2F;2<br>  $$</li>
+<li>矩阵单元值$s_{ij}$<br>  $$S_{ij} &#x3D; 2\log_{2}\left( \frac{q_{ij}}{e_{ij}} \right)$$</li>
+<li>矩阵后的数字越大，表示关系越近</li>
+</ul>
+</li>
+<li>定义了不同进化差异下氨基酸替换矩阵</li>
+<li>根据物种或序列潜在差异程度，选择对应的氨基酸替换矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>空位罚分<ul>
+<li>常数型空位罚分<ul>
+<li>匹配：+8</li>
+<li>错配：-5</li>
+<li>空位延伸罚分：0</li>
+<li>空位开放罚分：-4![[Pasted image 20231221150852.png]]</li>
+</ul>
+</li>
+<li>仿射函数空位罚分<ul>
+<li>匹配：+8</li>
+<li>错配：-5</li>
+<li>空位延伸罚分：-3</li>
+<li>空位开放罚分：-4![[Pasted image 20231221151104.png]]</li>
+<li>长度为k的空位罚分$$x+k*y$$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="双序列比对"><a href="#双序列比对" class="headerlink" title="双序列比对"></a>双序列比对</h2><ul>
+<li>Needleman-Wunsch算法<ul>
+<li>动态规划<code>将一个问题，拆分成一个个子问题，直到子问题可以直接解决。然后，把子问题的答案保存起来，以减少重复计算，再根据子问题答案反推，得出原问题解的一种方法</code>![[Pasted image 20231221151920.png]]</li>
+<li>寻求两序列间距离的最小即最短距离</li>
+<li>在给定计分规则的情况下，数学上可证明能给出具有最高比对打分的对比矩阵。</li>
+<li>动态规划进行序列比对的基本思想<ul>
+<li>在(i,j)处的最佳排列是在(i,j)之前最佳排列加上i和j的最佳排列</li>
+<li>重复过程直到两个序列的终点</li>
+<li>![[Pasted image 20231221153035.png]]</li>
+<li>从哪来的</li>
+<li>![[Pasted image 20231221153417.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Smith-Waterman算法<ul>
+<li>比较的时候加入0</li>
+<li>附初始值为零</li>
+<li>从最大值回溯到0</li>
+</ul>
+</li>
+<li>Semi-Global Alignment(半全局比对)<ul>
+<li>只第一列初始化为0</li>
+<li>最后一列的最大值开始回溯</li>
+</ul>
+</li>
+<li>启发式算法</li>
+<li>BLAST算法<ul>
+<li>应用 <ul>
+<li>序列比对</li>
+<li>基于序列比对，推断位置序列功能</li>
+<li>基于序列比对，寻找某物种同一家族的蛋白质序列</li>
+<li>基于序列比对，寻找物种之间的同源基因&#x2F;蛋白</li>
+</ul>
+</li>
+<li>基本流程<ul>
+<li>对于待比对或检索的序列，建立词列表或哈希表![[Pasted image 20231221154527.png]]![[Pasted image 20231221154535.png]]</li>
+<li>确定搜索目标![[Pasted image 20231221154612.png]]数据库总所有包含上述词列表中词完全一样的序列</li>
+<li>对之前得到的每一条序列，在匹配区域向两端以动态规划算法向外延伸，扩展比对区域，得到高得分联配对（HSP），根据设定的玲姐比对打分值或E值，列出所有HSP![[Pasted image 20231221154647.png]]</li>
+</ul>
+</li>
+<li>分类![[Pasted image 20231221154715.png]]</li>
+<li>PSI-BLAST<ul>
+<li>在蛋白质数据库中循环搜索查询蛋白质，所有前一次被PSI-BLAST发现的统计显著蛋白质序列将整合成新记分矩阵（PSSM），通过多次迭代比对，直到不再发现统计显著的新蛋白质。<ul>
+<li>起始序列</li>
+<li>在全序列数据库中搜索相似的序列</li>
+<li>惊喜多序列对位排列</li>
+<li>构建一个概型（位点特异分数矩阵PSSM），并且数字描述每一个位点的保守性。</li>
+<li>![[Pasted image 20231224233639.png]]</li>
+<li>新的序列被用于对位排列</li>
+<li>多次迭代得到<ul>
+<li>注释的序列信息</li>
+<li>数套多重序列对位排列</li>
+<li>由PSI-BLAST所产生的概型</li>
+<li>确定相似性的阈值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PSSM</li>
+<li>![[Pasted image 20231224234148.png]]</li>
+</ul>
+</li>
+<li>一致性：两条序列在同一位点上的核苷酸或氨基酸残基完全相同</li>
+<li>相似性：两条序列在同一位点上的氨基酸残基的化学性质相似</li>
+<li>对比的统计学显著性</li>
+<li>![[Pasted image 20231224234511.png]]</li>
+<li>![[Pasted image 20231224234515.png]]</li>
+<li>![[Pasted image 20231224234519.png]]</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://psrpsr23.github.io/blog/2024/04/28/note/%E5%A4%A7%E4%B8%89%E4%B8%8A/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8E%9F%E7%90%86/%E4%B8%A4%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9/" data-id="clvj9cw5l000hqkht27br0t7m" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/blog/">&laquo; 上一页</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/6/">6</a><a class="extend next" rel="next" href="/blog/page/3/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/04/">四月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/04/28/%E5%BA%8F%E5%88%97%E6%A8%A1%E6%8B%9F%E8%AE%BA%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD%E7%A7%91%E7%A0%94/%E5%BA%8F%E5%88%97%E6%A8%A1%E6%8B%9F%E8%AE%BA%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD%E7%A7%91%E7%A0%94/ZeroBind/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E7%8E%89%E7%B1%B3/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/04/28/note/%E7%8E%89%E7%B1%B3/%E5%88%86%E5%B8%83%E5%9B%BE/%E5%90%84motif%E5%88%86%E5%B8%83%E5%9B%BE/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 彭澍荣# 博客的作者<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
